@@ -4,6 +4,8 @@ import {
   ArrowRight,
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Menu,
   X,
   Phone,
