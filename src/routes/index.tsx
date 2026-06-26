@@ -4,14 +4,12 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+  Check,
   Menu,
   X,
   Phone,
   Mail,
   MapPin,
-  Facebook,
-  Instagram,
-  Linkedin,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-roof.jpg";
@@ -27,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Expert roof replacements across Perth, WA. Registered builders (BRN BC105894) replacing tiles with Colorbond, asbestos removal & Colorbond upgrades. Free quotes, council approval handled.",
+          "Premium roof replacements and repairs across Perth. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval.",
       },
     ],
   }),
@@ -140,7 +138,7 @@ function Hero() {
   return (
     <section
       id="top"
-      aria-label="Perth Roof Replacements — Registered Roofing Specialists"
+      aria-label="Perth Roof Replacements — Registered Builders"
       className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[750px] overflow-hidden bg-navy"
     >
       <div className="absolute inset-0" aria-hidden="true">
@@ -158,7 +156,7 @@ function Hero() {
       <div className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[750px] flex items-center">
         <div className="w-full" style={{ paddingLeft: "max(8%, 1.5rem)", paddingRight: "1.5rem" }}>
           <div className="max-w-[680px] text-white reveal">
-            <p className="eyebrow text-teal block mb-7">Registered Roofing Specialists — Perth, WA</p>
+            <p className="eyebrow text-teal block mb-7">Perth · Registered Builders</p>
             <h1
               className="font-display uppercase font-semibold text-white"
               style={{
@@ -178,8 +176,12 @@ function Hero() {
               <a href="#contact" className="btn-teal btn-teal-hover">
                 Get a Free Quote <ArrowRight size={14} className="ml-2" aria-hidden="true" />
               </a>
-              <a href="#how" className="btn-outline-light">
-                How It Works
+              <a
+                href="tel:+61861881355"
+                className="btn-outline-light"
+                aria-label="Call us on (08) 6188 1355"
+              >
+                <Phone size={14} className="mr-2" aria-hidden="true" /> (08) 6188 1355
               </a>
             </div>
           </div>
@@ -194,7 +196,7 @@ function Intro() {
     <section id="replacements" aria-labelledby="intro-heading" className="section-pad bg-background">
       <div className="container-prose text-center">
         <div className="mx-auto h-px w-12 bg-teal mb-8" aria-hidden="true" />
-        <p className="eyebrow text-foreground/55">Built on experience · Driven by quality</p>
+        <p className="eyebrow text-foreground/55">Built on Experience. Driven by Quality.</p>
         <h2
           id="intro-heading"
           className="mt-6 mx-auto font-display uppercase font-semibold"
@@ -209,9 +211,9 @@ function Intro() {
           <span className="teal-italic text-[1.1em]">Businesses</span>
         </h2>
         <p className="mt-8 mx-auto text-foreground/65 leading-[1.85] text-[1.02rem]" style={{ maxWidth: "780px" }}>
-          A new roof is a significant investment — one you want done right the first time. As registered
-          builders, we coordinate every trade ourselves to deliver a seamless, compliant, and
-          high-quality roof replacement that holds its value for decades to come.
+          A new roof is a big investment, one you want done right the first time. At Perth Roof
+          Replacements, we're more than roofing contractors. As registered builders, we coordinate
+          every trade to deliver a seamless, compliant, and high-quality roof replacement that lasts.
         </p>
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
           <a href="#contact" className="btn-teal btn-teal-hover">Residential</a>
@@ -265,14 +267,8 @@ const SERVICE_ITEMS = [
 
 function Services() {
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-20 md:py-28 bg-soft">
+    <section id="services" aria-label="Our roof replacement services" className="py-20 md:py-28 bg-soft">
       <div className="container-prose">
-        <div className="text-center mb-14">
-          <p className="eyebrow text-foreground/55">Our Services</p>
-          <h2 id="services-heading" className="mt-5 font-display uppercase font-semibold text-3xl md:text-4xl">
-            Roof Replacement <span className="teal-italic text-[1.1em]">Specialists</span>
-          </h2>
-        </div>
         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0" role="list">
           {SERVICE_ITEMS.map((s) => (
             <li
@@ -282,9 +278,9 @@ function Services() {
               <div className="mb-6 transition-transform duration-300 group-hover:scale-105">
                 <ServiceIcon d={s.icon} title={s.title} />
               </div>
-              <h3 className="text-[0.82rem] tracking-[0.16em] uppercase font-semibold leading-snug font-display">
+              <h2 className="text-[0.82rem] tracking-[0.16em] uppercase font-semibold leading-snug font-display">
                 {s.title}
-              </h3>
+              </h2>
               <p className="sr-only">{s.description}</p>
             </li>
           ))}
@@ -297,15 +293,15 @@ function Services() {
 const TRUST_BLOCKS = [
   {
     title: "Done Once, Done Right",
-    body: "We don't patch problems — we replace them with lasting solutions. As registered builders, we coordinate every trade to ensure your roof meets code, withstands local weather, and performs for years to come.",
+    body: "We don't patch problems — we replace them with lasting solutions. As registered builders carrying out roof replacements in Perth, we expertly coordinate every trade to ensure your roof meets code, withstands local weather, and performs for years to come.",
   },
   {
     title: "What We Quote Is What You Pay",
-    body: "No hidden costs. No surprise fees. Transparent pricing built on thorough inspections — because trust is built on certainty, not guesswork.",
+    body: "No hidden costs. No surprise fees. We believe in transparent pricing, and we stick to it — because trust is built on certainty, not guesswork. All roof replacement quotes are based on thorough inspections and fully inclusive of all costs.",
   },
   {
     title: "Guaranteed Follow-Through",
-    body: "If something goes wrong, we make it right. We stand by our work and stay accountable long after the last sheet is laid.",
+    body: "If something goes wrong, we make it right. It's that simple. We stand by our work and stay accountable long after the last sheet is laid — because a quality roof replacement isn't just about day one, it's about long-term reliability.",
   },
 ];
 
@@ -329,29 +325,28 @@ function Trust() {
           <div className="mt-8 h-px w-14 bg-teal" aria-hidden="true" />
           <p className="mt-7 text-foreground/65 leading-[1.85] max-w-sm">
             A West Australian roofing business backed by registered building credentials and a decade
-            of replacements delivered to the highest standard.
+            of replacements done right.
           </p>
         </div>
         <div className="lg:border-l lg:border-border lg:pl-16">
-          <ol className="space-y-12 list-none p-0 m-0" aria-label="Why choose Perth Roof Replacements">
-            {TRUST_BLOCKS.map((b, idx) => (
-              <li key={b.title} className="grid grid-cols-[auto_1fr] gap-7">
-                <div
-                  className="font-display text-teal text-[2rem] leading-none font-semibold tabular-nums pt-1"
-                  aria-hidden="true"
-                >
-                  {String(idx + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <h3 className="font-display text-xl md:text-2xl font-semibold uppercase tracking-wide">
+          <ul className="space-y-10 list-none p-0 m-0" aria-label="Why choose Perth Roof Replacements">
+            {TRUST_BLOCKS.map((b) => (
+              <li key={b.title}>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-teal/15 text-teal"
+                    aria-hidden="true"
+                  >
+                    <Check size={16} strokeWidth={2.5} />
+                  </span>
+                  <h3 className="font-display text-lg md:text-xl font-semibold uppercase tracking-wide">
                     {b.title}
                   </h3>
-                  <div className="mt-3 h-px w-10 bg-teal/60" aria-hidden="true" />
-                  <p className="mt-4 text-foreground/65 leading-[1.85]">{b.body}</p>
                 </div>
+                <p className="mt-3 text-foreground/65 leading-[1.85]">{b.body}</p>
               </li>
             ))}
-          </ol>
+          </ul>
           <a href="#contact" className="btn-teal btn-teal-hover mt-12">
             Get a Free Quote
           </a>
@@ -365,7 +360,7 @@ const STYLE_SLIDES = [
   {
     tag: "Classic",
     image: classicImg,
-    body: "After timeless elegance? Classic Colorbond shades like Surfmist® or Dune® are always in style. Your roof is a major design feature — make it extraordinary.",
+    body: "After timeless elegance? Classic shades like Surfmist® or Dune® are always in style. Your roof is a major design feature, so why settle for ordinary when you can make it extraordinary?",
   },
   {
     tag: "Modern",
@@ -375,7 +370,7 @@ const STYLE_SLIDES = [
   {
     tag: "Premium",
     image: premiumImg,
-    body: "Architect-grade roofing for homes that deserve a statement. Premium Colorbond materials, expert installation, a finish that holds its value for decades.",
+    body: "Architect-grade roofing for homes that deserve a statement. Premium materials, expert installation, a finish that holds its value for decades.",
   },
 ];
 
@@ -405,12 +400,12 @@ function StyleCarousel() {
         >
           <div className="p-10 md:p-12 flex flex-col justify-between min-h-[440px]">
             <div>
-              <div className="flex items-center gap-4 mb-6" aria-hidden="true">
-                <span className="font-display text-teal text-2xl font-semibold tabular-nums">
+              <div className="flex items-center gap-3 mb-8" aria-hidden="true">
+                <span className="font-display text-teal text-lg font-semibold tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="h-px flex-1 bg-border" />
-                <span className="font-display text-foreground/40 text-sm tabular-nums">
+                <span className="font-display text-foreground/40 text-lg tabular-nums">/</span>
+                <span className="font-display text-foreground/40 text-lg tabular-nums">
                   0{STYLE_SLIDES.length}
                 </span>
               </div>
@@ -443,7 +438,7 @@ function StyleCarousel() {
             <img
               key={s.image}
               src={s.image}
-              alt={`${s.tag} Colorbond roof style installed by Perth Roof Replacements`}
+              alt={`${s.tag} roof style installed by Perth Roof Replacements`}
               className="absolute inset-0 w-full h-full object-cover reveal"
               loading="lazy"
               decoding="async"
@@ -477,11 +472,12 @@ function Approval() {
           We Get <span className="teal-italic text-[1.1em]">Council Approval</span> For You
         </h2>
         <p className="mt-7 text-foreground/65 leading-[1.85]">
-          As a registered builder in Western Australia (BRN BC105894), we're authorised to handle the
-          entire compliance process — council approvals, engineering checks, and permits. Your new
-          roof meets every regulation, and you won't hit a single hurdle when it's time to sell.
+          Perth Roof Replacements is a registered builder, which means we are authorised to handle
+          the entire compliance process including council approvals, engineering checks, and permits.
+          This ensures your new roof meets regulations and you don't have any trouble selling your
+          home down the track.
         </p>
-        <a href="#contact" className="btn-teal btn-teal-hover mt-8">
+        <a href="#contact" className="btn-teal btn-teal-hover mt-9">
           How It Works
         </a>
       </div>
@@ -523,7 +519,7 @@ function Locals() {
         </div>
         <div className="bg-navy text-white p-10 md:p-16 lg:p-20 flex items-center">
           <div className="max-w-md">
-            <p className="eyebrow text-teal">Locally Owned &amp; Operated</p>
+            <p className="eyebrow text-teal">Locally Owned</p>
             <h2
               id="locals-heading"
               className="mt-6 font-display uppercase font-semibold"
@@ -535,9 +531,10 @@ function Locals() {
             </h2>
             <div className="mt-7 h-px w-14 bg-teal" aria-hidden="true" />
             <p className="mt-7 text-white/80 leading-[1.85]">
-              As a West Australian-owned business, we understand local homes, local weather, and the
-              roofing standards that protect them best. Built on honesty, workmanship, and real
-              accountability across Perth and surrounds.
+              As a proudly West Australian-owned business, Perth Roof Replacements understands local
+              homes, local weather, and the roofing standards that protect them best. We've built our
+              reputation by delivering quality roof replacements across Perth and beyond — with
+              honesty, workmanship, and real accountability.
             </p>
             <a href="#contact" className="btn-teal btn-teal-hover mt-9">Get in Touch</a>
           </div>
@@ -550,9 +547,9 @@ function Locals() {
 const FOOTER_LINKS = [
   { label: "Roof Replacements", href: "#replacements" },
   { label: "Roof Repairs", href: "#repairs" },
-  { label: "Colorbond Roofing", href: "#replacements" },
-  { label: "Asbestos Removal", href: "#replacements" },
-  { label: "Council Approvals", href: "#how" },
+  { label: "About", href: "#about" },
+  { label: "How It Works", href: "#how" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function Footer() {
@@ -564,40 +561,10 @@ function Footer() {
             <Logo />
             <p className="mt-6 text-sm text-foreground/65 max-w-xs leading-[1.85]">
               Registered building roof replacement specialists serving Perth and Western Australia.
-              Registered Builder BRN BC105894.
             </p>
-            <div className="mt-6 flex gap-3" aria-label="Social media links">
-              <a
-                href="https://www.facebook.com/perthroofreplacements"
-                aria-label="Perth Roof Replacements on Facebook"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="w-9 h-9 border border-border flex items-center justify-center text-foreground/60 hover:text-teal hover:border-teal transition-colors"
-              >
-                <Facebook size={15} aria-hidden="true" />
-              </a>
-              <a
-                href="https://www.instagram.com/perthroofreplacements"
-                aria-label="Perth Roof Replacements on Instagram"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="w-9 h-9 border border-border flex items-center justify-center text-foreground/60 hover:text-teal hover:border-teal transition-colors"
-              >
-                <Instagram size={15} aria-hidden="true" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/perthroofreplacements"
-                aria-label="Perth Roof Replacements on LinkedIn"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="w-9 h-9 border border-border flex items-center justify-center text-foreground/60 hover:text-teal hover:border-teal transition-colors"
-              >
-                <Linkedin size={15} aria-hidden="true" />
-              </a>
-            </div>
           </div>
           <nav aria-label="Footer navigation">
-            <h3 className="eyebrow text-foreground/55">Quick Links</h3>
+            <h2 className="eyebrow text-foreground/55">Quick Links</h2>
             <ul className="mt-6 space-y-3 text-sm text-foreground/75 list-none p-0 m-0">
               {FOOTER_LINKS.map((l) => (
                 <li key={l.label}>
@@ -607,7 +574,7 @@ function Footer() {
             </ul>
           </nav>
           <div>
-            <h3 className="eyebrow text-foreground/55">Contact</h3>
+            <h2 className="eyebrow text-foreground/55">Connect</h2>
             <address className="not-italic mt-6 space-y-3 text-sm text-foreground/75">
               <p className="flex items-center gap-3">
                 <Mail size={14} className="text-teal shrink-0" aria-hidden="true" />
@@ -632,13 +599,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-xs text-foreground/50">
-          <div>
-            <small>&copy; {new Date().getFullYear()} Perth Roof Replacements. All rights reserved.</small>
-          </div>
-          <nav aria-label="Legal links" className="flex gap-6">
-            <a href="/privacy-policy" className="hover:text-teal transition-colors">Privacy Policy</a>
-            <a href="/terms" className="hover:text-teal transition-colors">Terms</a>
-          </nav>
+          <small>&copy; {new Date().getFullYear()} Perth Roof Replacements. All rights reserved.</small>
         </div>
       </div>
     </footer>
