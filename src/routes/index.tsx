@@ -146,19 +146,6 @@ function Hero() {
                 <Phone size={14} className="mr-2" aria-hidden="true" /> (08) 6188 1355
               </a>
             </div>
-            <ul className="mt-10 flex flex-wrap gap-2.5 list-none p-0 m-0" aria-label="Key credentials">
-              {[
-                { value: "500+", label: "Roofs Replaced" },
-                { value: "10+", label: "Years Experience" },
-                { value: "100%", label: "Licensed & Insured" },
-                { value: "5.0★", label: "Google Rating" },
-              ].map((s) => (
-                <li key={s.label} className="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-2">
-                  <span className="font-display font-semibold text-teal text-sm leading-none">{s.value}</span>
-                  <span className="text-white/55 text-[0.68rem] tracking-[0.12em] uppercase font-medium">{s.label}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
@@ -166,6 +153,33 @@ function Hero() {
   );
 }
 
+
+// ─── Trust Strip ─────────────────────────────────────────────────────────────
+
+const TRUST_MARKS = [
+  "Registered Builder · BC105894",
+  "500+ Roofs Replaced",
+  "Master Builders WA",
+  "5.0★ Google Rating",
+  "ABN 57 682 105 015",
+];
+
+function TrustStrip() {
+  return (
+    <div className="border-b border-border bg-background" aria-label="Credentials">
+      <div className="container-prose">
+        <ul className="flex flex-wrap items-center gap-x-8 gap-y-0 list-none p-0 m-0 py-3.5" role="list">
+          {TRUST_MARKS.map((t, i) => (
+            <li key={t} className="flex items-center gap-8">
+              <span className="text-[0.7rem] tracking-[0.16em] uppercase text-foreground/40 font-medium whitespace-nowrap">{t}</span>
+              {i < TRUST_MARKS.length - 1 && <span className="h-3 w-px bg-border hidden sm:block" aria-hidden="true" />}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
@@ -873,6 +887,7 @@ function HomePage() {
       <Header />
       <main id="main-content" className="pt-[80px]">
         <Hero />
+        <TrustStrip />
         <div data-reveal><Intro /></div>
         <div data-reveal><Services /></div>
         <div data-reveal><Trust /></div>
