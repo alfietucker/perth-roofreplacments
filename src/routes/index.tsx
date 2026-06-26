@@ -12,6 +12,10 @@ import {
   Mail,
   MapPin,
   Star,
+  Shield,
+  FileCheck,
+  Clock,
+  Home,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-roof.jpg";
@@ -27,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Premium roof replacements and repairs across Perth. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval.",
+          "Premium roof replacements across Perth. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval — fixed price, no surprises.",
       },
     ],
   }),
@@ -39,7 +43,7 @@ const NAV_LINKS = [
   { label: "Our Work", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Get a Quote", href: "/quote" },
+  { label: "Book Free Inspection", href: "/quote" },
 ];
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
@@ -95,7 +99,7 @@ function Header() {
           <a href="tel:YOUR_PHONE_NUMBER" className="hidden md:inline-flex items-center gap-2 text-[0.82rem] font-semibold text-foreground/80 hover:text-teal transition-colors mr-2" aria-label="Call us on (08) XXXX XXXX">
             <Phone size={14} aria-hidden="true" /> (08) XXXX XXXX
           </a>
-          <a href="/quote" className="hidden sm:inline-flex btn-teal btn-teal-hover">Get a Free Quote</a>
+          <a href="/quote" className="hidden sm:inline-flex btn-teal btn-teal-hover">Book Free Inspection</a>
           <button className="lg:hidden p-2 -mr-2 text-foreground" onClick={() => setOpen(!open)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-menu">
             {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>
@@ -109,7 +113,7 @@ function Header() {
                 {n.label}
               </a>
             ))}
-            <a href="/quote" onClick={() => setOpen(false)} className="btn-teal btn-teal-hover mt-3 sm:hidden">Get a Free Quote</a>
+            <a href="/quote" onClick={() => setOpen(false)} className="btn-teal btn-teal-hover mt-3 sm:hidden">Book Free Inspection</a>
           </div>
         </nav>
       )}
@@ -121,28 +125,28 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" aria-label="Perth Roof Replacements — Registered Builders" className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[750px] overflow-hidden bg-navy">
+    <section id="top" aria-label="Perth Roof Replacements — Registered Builders" className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[760px] overflow-hidden bg-navy">
       <div className="absolute inset-0" aria-hidden="true">
         <img src={heroImg} alt="Premium Colorbond roof replacement installed on a Perth home by registered builders" className="w-full h-full object-cover hero-zoom" width={1920} height={1280} fetchPriority="high" decoding="async" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,28,38,0.82)_0%,rgba(12,28,38,0.68)_45%,rgba(12,28,38,0.35)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,28,38,0.86)_0%,rgba(12,28,38,0.70)_45%,rgba(12,28,38,0.35)_100%)]" />
       </div>
-      <div className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[750px] flex items-center">
+      <div className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[760px] flex items-center">
         <div className="w-full" style={{ paddingLeft: "max(8%, 1.5rem)", paddingRight: "1.5rem" }}>
-          <div className="max-w-[680px] text-white reveal">
-            <h1 className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(2.6rem, 6vw, 4.4rem)", lineHeight: "0.95", letterSpacing: "-0.01em" }}>
-              Perth's Registered
+          <div className="max-w-[700px] text-white reveal">
+            <h1 className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(2.7rem, 6.2vw, 4.6rem)", lineHeight: "0.94", letterSpacing: "-0.01em" }}>
+              Your Roof Replaced.
               <br />
-              Roof Specialists
+              <span className="teal-italic text-[1.04em]">Done Once. Done Right.</span>
             </h1>
-            <p className="mt-7 text-base sm:text-lg text-white/80 max-w-md leading-relaxed">
-              We handle the permits, the trades, and the council approvals — so you don't have to. <span className="teal-italic text-[1.2em]">One fixed price. Zero stress.</span>
+            <p className="mt-7 text-base sm:text-lg text-white/80 max-w-[520px] leading-relaxed">
+              Perth's registered roofing builders — we handle every permit, every trade, and every council approval. One fixed price. No surprises. Guaranteed.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 items-center">
               <a href="/quote" className="btn-teal btn-teal-hover">
                 Book My Free Roof Inspection <ArrowRight size={14} className="ml-2" aria-hidden="true" />
               </a>
               <a href="tel:YOUR_PHONE_NUMBER" className="btn-outline-light" aria-label="Call us on (08) XXXX XXXX">
-                <Phone size={14} className="mr-2" aria-hidden="true" /> (08) XXXX XXXX
+                <Phone size={14} className="mr-2" aria-hidden="true" /> Prefer to call? We're here.
               </a>
             </div>
             <p className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem] tracking-[0.18em] uppercase text-white/35 font-medium" aria-label="Trust credentials">
@@ -151,6 +155,8 @@ function Hero() {
               <span>500+ Roofs Replaced</span>
               <span className="h-3 w-px bg-white/20" aria-hidden="true" />
               <span>5.0★ · 47 Google Reviews</span>
+              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
+              <span>Council Approvals Included</span>
             </p>
           </div>
         </div>
@@ -159,6 +165,32 @@ function Hero() {
   );
 }
 
+// ─── Problem / Agitation ─────────────────────────────────────────────────────
+
+function Problem() {
+  return (
+    <section aria-labelledby="problem-heading" className="bg-navy text-white py-16 md:py-20">
+      <div className="container-prose max-w-4xl text-center">
+        <h2 id="problem-heading" className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(1.7rem, 3.4vw, 2.6rem)", lineHeight: "1.08" }}>
+          Most Perth Homeowners Don't Know
+          <br />
+          <span className="teal-italic text-[1.08em]">What They're Really Signing Up For</span>
+        </h2>
+        <p className="mt-8 text-white/65 leading-[1.9] text-[1.02rem] max-w-2xl mx-auto">
+          You get a quote. Sounds reasonable. Then the job starts — and the variations roll in. Unexpected costs. A crew that disappears mid-week. Council sending letters because the permits weren't lodged properly. And a roof that, six months later, leaks exactly where the old one did.
+        </p>
+        <p className="mt-5 text-white/65 leading-[1.9] text-[1.02rem] max-w-2xl mx-auto">
+          This happens more than you'd think — because most roofing contractors in Perth are not registered builders. They can't legally obtain permits, manage engineering sign-offs, or certify compliance. When things go wrong, it's your problem, your liability, your home.
+        </p>
+        <div className="mt-10 inline-block border-t border-teal/30 pt-8">
+          <p className="text-teal font-display font-semibold uppercase tracking-[0.18em] text-sm">
+            There's a better way to replace a roof.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
@@ -167,7 +199,7 @@ function Intro() {
     <section id="replacements" aria-labelledby="intro-heading" className="section-pad bg-background">
       <div className="container-prose text-center">
         <div className="mx-auto h-px w-12 bg-teal mb-8" aria-hidden="true" />
-        <p className="eyebrow text-foreground/55">Perth's Only Registered Roof Replacement Specialists</p>
+        <p className="eyebrow text-foreground/55">Perth's Registered Roof Replacement Specialists</p>
         <h2 id="intro-heading" className="mt-6 mx-auto font-display uppercase font-semibold" style={{ maxWidth: "720px", fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
           Fixed Price. <span className="teal-italic text-[1.1em]">Council Approved.</span> Done in{" "}
           <span className="teal-italic text-[1.1em]">Days.</span>
@@ -196,24 +228,59 @@ function ServiceIcon({ d, title }: { d: string; title: string }) {
 }
 
 const SERVICE_ITEMS = [
-  { title: "Replace Tiles With Colorbond", description: "Professional replacement of existing terracotta or concrete roof tiles with premium Colorbond steel roofing in Perth.", icon: "M8 30L32 14l24 16M14 30v20h36V30M14 38h36M14 44h36" },
-  { title: "Replace Existing Colorbond", description: "Upgrade worn or damaged Colorbond roofing with new premium Colorbond steel — stronger, longer-lasting finish.", icon: "M6 26h52M10 26v24h44V26M10 34h44M10 42h44M10 50h44" },
-  { title: "Replace Asbestos With Tiles", description: "Safe licensed asbestos roof removal and replacement with quality concrete or terracotta tiles across Perth.", icon: "M10 28h44l-6-10H16zM14 28v22h36V28M18 32l4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4" },
-  { title: "Replace Asbestos With Colorbond", description: "Safe licensed asbestos roof removal and replacement with durable Colorbond steel roofing for Perth homes.", icon: "M10 28h44l-6-10H16zM14 28v22h36V28M14 34h36M14 40h36M14 46h36" },
+  {
+    title: "Replace Tiles With Colorbond",
+    outcome: "Lighter load. Decades of protection.",
+    fear: "Old terracotta cracking? We replace it completely — council approved, fixed price.",
+    description: "Professional replacement of existing terracotta or concrete roof tiles with premium Colorbond steel roofing in Perth.",
+    icon: "M8 30L32 14l24 16M14 30v20h36V30M14 38h36M14 44h36",
+  },
+  {
+    title: "Replace Existing Colorbond",
+    outcome: "Stronger. Quieter. Better looking.",
+    fear: "Rust, leaks, lifting sheets? We strip it and start fresh — no patchwork.",
+    description: "Upgrade worn or damaged Colorbond roofing with new premium Colorbond steel — stronger, longer-lasting finish.",
+    icon: "M6 26h52M10 26v24h44V26M10 34h44M10 42h44M10 50h44",
+  },
+  {
+    title: "Replace Asbestos With Tiles",
+    outcome: "Safe removal. Peace of mind restored.",
+    fear: "Asbestos isn't something to leave. We remove it safely — fully licensed, fully documented.",
+    description: "Safe licensed asbestos roof removal and replacement with quality concrete or terracotta tiles across Perth.",
+    icon: "M10 28h44l-6-10H16zM14 28v22h36V28M18 32l4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4",
+  },
+  {
+    title: "Replace Asbestos With Colorbond",
+    outcome: "Modern, durable, and fully compliant.",
+    fear: "One of Perth's most common upgrades — and one we handle start to finish, permits included.",
+    description: "Safe licensed asbestos roof removal and replacement with durable Colorbond steel roofing for Perth homes.",
+    icon: "M10 28h44l-6-10H16zM14 28v22h36V28M14 34h36M14 40h36M14 46h36",
+  },
 ];
 
 function Services() {
   return (
     <section id="services" aria-label="Our roof replacement services" className="py-20 md:py-28 bg-soft">
       <div className="container-prose">
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0" role="list">
+        <div className="text-center mb-14">
+          <p className="eyebrow text-foreground/55">What We Do</p>
+          <h2 className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
+            Every Type of <span className="teal-italic text-[1.1em]">Roof Replacement</span>
+          </h2>
+        </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0" role="list">
           {SERVICE_ITEMS.map((s) => (
-            <li key={s.title} className="group bg-background min-h-[220px] p-8 flex flex-col items-center justify-center text-center border border-border/60 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_18px_40px_-22px_rgba(32,55,70,0.28)] hover:border-teal/50">
+            <li key={s.title} className="group bg-background p-8 flex flex-col border border-border/60 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_18px_40px_-22px_rgba(32,55,70,0.28)] hover:border-teal/50">
               <div className="mb-6 transition-transform duration-300 group-hover:scale-105">
                 <ServiceIcon d={s.icon} title={s.title} />
               </div>
               <h3 className="text-[0.82rem] tracking-[0.16em] uppercase font-semibold leading-snug font-display">{s.title}</h3>
+              <p className="mt-3 text-teal font-semibold text-[0.82rem] leading-snug">{s.outcome}</p>
+              <p className="mt-2 text-foreground/55 text-[0.78rem] leading-[1.75]">{s.fear}</p>
               <p className="sr-only">{s.description}</p>
+              <a href="/quote" className="mt-6 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-teal hover:text-teal-hover transition-colors flex items-center gap-1.5">
+                Get a Quote <ArrowRight size={11} aria-hidden="true" />
+              </a>
             </li>
           ))}
         </ul>
@@ -225,9 +292,22 @@ function Services() {
 // ─── Trust ────────────────────────────────────────────────────────────────────
 
 const TRUST_BLOCKS = [
-  { title: "Done Once, Done Right", body: "A botched roof job is one of the most expensive mistakes a homeowner can make — and one of the hardest to fix. As registered builders, we coordinate every trade from start to finish, ensuring your replacement meets code, handles Perth's climate, and doesn't need touching again for decades." },
-  { title: "What We Quote Is What You Pay", body: "We've heard the stories — quotes that looked reasonable, then doubled by the time the last sheet was laid. That won't happen here. Every quote we give is based on a thorough on-site inspection and covers everything. No line items added later. No variations. No excuses." },
-  { title: "Guaranteed Follow-Through", body: "Our accountability doesn't end when the crew packs up. We back our workmanship with a guarantee, and if anything isn't right after the job is done, we come back and fix it. That's what it means to stand behind your work — not just on the day, but for the long term." },
+  {
+    title: "Done Once, Done Right",
+    body: "A botched roof job is one of the most expensive mistakes a homeowner can make — and one of the hardest to fix. As registered builders, we coordinate every trade from start to finish, ensuring your replacement meets code, handles Perth's climate, and doesn't need touching again for decades.",
+  },
+  {
+    title: "What We Quote Is What You Pay",
+    body: "We've heard the stories — quotes that looked reasonable, then doubled by the time the last sheet was laid. That won't happen here. Every quote we give is based on a thorough on-site inspection and covers everything. No line items added later. No variations. No excuses.",
+  },
+  {
+    title: "Guaranteed Follow-Through",
+    body: "Our accountability doesn't end when the crew packs up. We back our workmanship with a guarantee, and if anything isn't right after the job is done, we come back and fix it. That's what it means to stand behind your work — not just on the day, but for the long term.",
+  },
+  {
+    title: "We Handle the Paperwork",
+    body: "Permits. Council submissions. Engineering sign-offs. Compliance certificates. Most homeowners have no idea how much red tape comes with a roof replacement — and most roofers leave it to you to figure out. We handle it all as standard. You don't make a single call to council.",
+  },
 ];
 
 function Trust() {
@@ -387,24 +467,45 @@ const GOOGLE_ICON = (
 
 function Reviews() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [canLeft, setCanLeft] = useState(false);
-  const [canRight, setCanRight] = useState(true);
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const totalCards = REVIEWS.length;
 
-  const updateArrows = () => {
-    const el = trackRef.current;
-    if (!el) return;
-    setCanLeft(el.scrollLeft > 8);
-    setCanRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 8);
+  const scrollToCard = (idx: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const cards = track.querySelectorAll<HTMLElement>("[data-card]");
+    if (cards[idx]) {
+      track.scrollTo({ left: cards[idx].offsetLeft - track.offsetLeft, behavior: "smooth" });
+    }
+    setCurrent(idx);
   };
 
   const scroll = (dir: "left" | "right") => {
-    trackRef.current?.scrollBy({ left: dir === "right" ? 420 : -420, behavior: "smooth" });
+    const next = dir === "right"
+      ? (current + 1) % totalCards
+      : (current - 1 + totalCards) % totalCards;
+    scrollToCard(next);
   };
+
+  // Auto-advance every 5 seconds, pause on hover
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setCurrent((c) => {
+        const next = (c + 1) % totalCards;
+        scrollToCard(next);
+        return next;
+      });
+    }, 5000);
+    return () => clearInterval(id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paused, current]);
 
   return (
     <section id="reviews" aria-labelledby="reviews-heading" className="section-pad bg-background">
 
-      {/* header — inside container */}
+      {/* header */}
       <div className="container-prose text-center mb-12">
         <p className="eyebrow text-foreground/55">Customer Reviews</p>
         <h2 id="reviews-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
@@ -424,23 +525,28 @@ function Reviews() {
         </div>
       </div>
 
-      {/* track bleeds edge-to-edge on mobile, respects padding on desktop */}
+      {/* carousel track */}
       <div
         ref={trackRef}
-        onScroll={updateArrows}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
         className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 sm:px-6 lg:px-[max(calc((100vw-1200px)/2+1.5rem),1.5rem)]"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         role="list"
         aria-label="Customer reviews"
       >
-        {REVIEWS.map((r) => (
+        {REVIEWS.map((r, idx) => (
           <article
             key={r.name}
-            className="snap-start shrink-0 w-[82vw] sm:w-72 md:w-80 lg:w-[360px] bg-soft p-7 flex flex-col"
+            data-card
+            className="snap-start shrink-0 w-[82vw] sm:w-72 md:w-80 lg:w-[360px] bg-white rounded-2xl p-7 flex flex-col shadow-[0_4px_24px_-8px_rgba(32,55,70,0.12)] border border-border/40"
             role="listitem"
             itemProp="review"
             itemScope
             itemType="https://schema.org/Review"
+            aria-label={`Review by ${r.name} from ${r.suburb}`}
           >
             <div className="flex items-center justify-between mb-5">
               <div className="flex gap-0.5" aria-label={`${r.rating} out of 5 stars`}>
@@ -448,14 +554,14 @@ function Reviews() {
                   <Star key={i} size={13} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />
                 ))}
               </div>
-              <div className="opacity-20">{GOOGLE_ICON}</div>
+              <div className="opacity-25">{GOOGLE_ICON}</div>
             </div>
 
             <p className="text-foreground/70 leading-[1.9] text-[0.88rem] flex-1" itemProp="reviewBody">
               "{r.text}"
             </p>
 
-            <div className="mt-6 pt-5 border-t border-border" itemProp="author" itemScope itemType="https://schema.org/Person">
+            <div className="mt-6 pt-5 border-t border-border/50" itemProp="author" itemScope itemType="https://schema.org/Person">
               <p className="font-display font-semibold uppercase tracking-[0.12em] text-foreground text-[0.75rem]" itemProp="name">{r.name}</p>
               <p className="text-foreground/35 text-[0.68rem] mt-0.5">{r.suburb}, WA · <time>{r.date}</time></p>
             </div>
@@ -465,26 +571,38 @@ function Reviews() {
         <div className="shrink-0 w-4 sm:w-6 lg:w-[max(calc((100vw-1200px)/2+1.5rem),1.5rem)]" aria-hidden="true" />
       </div>
 
-      {/* controls — inside container */}
+      {/* dot pagination + controls */}
       <div className="container-prose mt-8 flex items-center justify-between">
         <a href="/quote" className="btn-teal btn-teal-hover">Book My Free Roof Inspection</a>
-        <div className="flex gap-2" role="group" aria-label="Scroll reviews">
-          <button
-            onClick={() => scroll("left")}
-            disabled={!canLeft}
-            aria-label="Previous reviews"
-            className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
-          >
-            <ChevronLeft size={17} aria-hidden="true" />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            disabled={!canRight}
-            aria-label="Next reviews"
-            className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
-          >
-            <ChevronRight size={17} aria-hidden="true" />
-          </button>
+        <div className="flex items-center gap-4">
+          <div className="flex gap-2" role="tablist" aria-label="Review pages">
+            {REVIEWS.map((_, i) => (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={i === current}
+                aria-label={`Go to review ${i + 1}`}
+                onClick={() => scrollToCard(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? "bg-teal w-5" : "bg-foreground/20 hover:bg-foreground/40"}`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2" role="group" aria-label="Scroll reviews">
+            <button
+              onClick={() => scroll("left")}
+              aria-label="Previous review"
+              className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal transition-colors"
+            >
+              <ChevronLeft size={17} aria-hidden="true" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              aria-label="Next review"
+              className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal transition-colors"
+            >
+              <ChevronRight size={17} aria-hidden="true" />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -492,7 +610,72 @@ function Reviews() {
   );
 }
 
-// ─── Approval / How It Works ──────────────────────────────────────────────────
+// ─── How It Works (Process) ───────────────────────────────────────────────────
+
+const PROCESS_STEPS = [
+  {
+    n: "01",
+    icon: <Home size={22} className="text-teal" aria-hidden="true" />,
+    title: "Free On-Site Inspection",
+    body: "We come to you. A qualified builder assesses your roof in full, identifies any issues, and answers every question you have — no cost, no obligation.",
+  },
+  {
+    n: "02",
+    icon: <FileCheck size={22} className="text-teal" aria-hidden="true" />,
+    title: "Fixed-Price Quote",
+    body: "You receive a detailed written quote covering all labour, materials, and compliance. What we quote is exactly what you pay — in writing, before a single tile is touched.",
+  },
+  {
+    n: "03",
+    icon: <Shield size={22} className="text-teal" aria-hidden="true" />,
+    title: "We Handle Everything",
+    body: "Permits. Council submissions. Engineering. Trades. We coordinate the entire job from start to finish. You don't chase anyone. You don't make a single call to council.",
+  },
+  {
+    n: "04",
+    icon: <Clock size={22} className="text-teal" aria-hidden="true" />,
+    title: "Your New Roof — Done",
+    body: "Most replacements are complete within 1–3 days. Once we're finished, you'll have a fully compliant, guaranteed roof — and we'll still pick up the phone if you ever need us.",
+  },
+];
+
+function Process() {
+  return (
+    <section id="how" aria-labelledby="process-heading" className="section-pad bg-soft">
+      <div className="container-prose">
+        <div className="text-center mb-16">
+          <p className="eyebrow text-foreground/55">How It Works</p>
+          <h2 id="process-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
+            Simple. Transparent. <span className="teal-italic text-[1.1em]">Done Properly.</span>
+          </h2>
+          <p className="mt-6 mx-auto text-foreground/60 leading-[1.85]" style={{ maxWidth: "560px" }}>
+            From your first call to your final roof — here's exactly what happens when you work with us.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {PROCESS_STEPS.map((s, idx) => (
+            <div key={s.n} className="relative">
+              {idx < PROCESS_STEPS.length - 1 && (
+                <div className="hidden lg:block absolute top-8 left-[calc(100%_-_1rem)] w-8 h-px bg-teal/30 z-10" aria-hidden="true" />
+              )}
+              <div className="w-14 h-14 bg-background border border-border flex items-center justify-center mb-5">
+                {s.icon}
+              </div>
+              <p className="font-display text-[2.4rem] font-semibold text-teal/15 leading-none mb-3">{s.n}</p>
+              <h3 className="font-display font-semibold uppercase tracking-wide text-sm mb-3">{s.title}</h3>
+              <p className="text-foreground/60 text-[0.85rem] leading-[1.85]">{s.body}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-14 text-center">
+          <a href="/quote" className="btn-teal btn-teal-hover">Start With a Free Inspection</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Approval / Credential ────────────────────────────────────────────────────
 
 const PARTNER_BRANDS = [
   { name: "Master Builders Association WA", short: "Master Builders" },
@@ -503,7 +686,7 @@ const PARTNER_BRANDS = [
 
 function Approval() {
   return (
-    <section id="how" aria-labelledby="approval-heading" className="py-20 md:py-28 bg-soft">
+    <section aria-labelledby="approval-heading" className="py-20 md:py-28 bg-background">
       <div className="container-prose text-center max-w-2xl">
         <p className="eyebrow text-foreground/55">A Credential That Matters</p>
         <h2 id="approval-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.8rem)", lineHeight: "1.1" }}>
@@ -543,16 +726,66 @@ function Locals() {
           <div className="max-w-md">
             <p className="eyebrow text-teal">Locally Owned</p>
             <h2 id="locals-heading" className="mt-6 font-display uppercase font-semibold" style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", lineHeight: "1.02" }}>
-              Locals You Can
+              We Know Perth.
               <br />
-              <span className="teal-italic text-[1.1em]">Count On</span>
+              <span className="teal-italic text-[1.1em]">Every Suburb. Every Roof.</span>
             </h2>
             <div className="mt-7 h-px w-14 bg-teal" aria-hidden="true" />
             <p className="mt-7 text-white/80 leading-[1.85]">
-              We're a West Australian-owned business — not a national chain, not a franchise. We know Perth homes, Perth weather, and the roofing standards that matter here. Every job we take on is one we're willing to put our name to, and our reputation has been built entirely on delivering what we promise. Honest pricing. Quality workmanship. Real accountability.
+              Perth roofs deal with conditions you won't find anywhere else in Australia. Coastal salt air from Cottesloe to Scarborough. Summer heat that warps and fades cheap materials. Old limestone homes in the western suburbs with non-standard council requirements. Every suburb in Perth has its quirks — different council rules, different soil profiles, different neighbour clearances.
+            </p>
+            <p className="mt-5 text-white/80 leading-[1.85]">
+              We're a West Australian–owned business. Not a national chain, not a franchise. We've replaced roofs from Joondalup to Rockingham, from Midland to Fremantle. When we quote your job, we're quoting it based on real knowledge of your home, your suburb, and your council — not a one-size-fits-all template.
             </p>
             <a href="/quote" className="btn-teal btn-teal-hover mt-9">Get My Fixed-Price Quote</a>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Risk Reversal ────────────────────────────────────────────────────────────
+
+const RISK_ITEMS = [
+  { icon: <FileCheck size={18} className="text-teal" />, title: "Written Fixed-Price Quote", body: "Before any work begins, you receive a detailed written quote. That number doesn't change — no variations, no extras, no surprises." },
+  { icon: <Shield size={18} className="text-teal" />, title: "Workmanship Guarantee", body: "We stand behind every roof we replace. If something isn't right, we come back and fix it. That guarantee is in writing." },
+  { icon: <Check size={18} className="text-teal" />, title: "Fully Licensed & Insured", body: "Registered Builder (BRN XXXXXXX), fully insured, WorkSafe compliant. You're protected at every stage of the job." },
+  { icon: <Home size={18} className="text-teal" />, title: "Free Inspection — No Obligation", body: "We come to you, assess your roof, and answer every question you have. Walk away if it's not right for you — no pressure, no hard sell." },
+];
+
+function RiskReversal() {
+  return (
+    <section aria-labelledby="risk-heading" className="section-pad bg-navy text-white">
+      <div className="container-prose">
+        <div className="text-center mb-14">
+          <p className="eyebrow text-teal">Zero Risk to You</p>
+          <h2 id="risk-heading" className="mt-5 font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
+            Every Guarantee.
+            <br />
+            <span className="teal-italic text-[1.1em]">In Writing. Before We Start.</span>
+          </h2>
+          <p className="mt-6 mx-auto text-white/60 leading-[1.85]" style={{ maxWidth: "560px" }}>
+            We know that handing a roofing job to someone new takes trust. Here's everything we do to make that decision easy.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {RISK_ITEMS.map((item) => (
+            <div key={item.title} className="bg-white/5 border border-white/10 p-7 flex gap-5">
+              <div className="shrink-0 w-10 h-10 bg-teal/15 flex items-center justify-center mt-0.5">
+                {item.icon}
+              </div>
+              <div>
+                <h3 className="font-display font-semibold uppercase tracking-wide text-sm text-white">{item.title}</h3>
+                <p className="mt-2 text-white/60 text-[0.84rem] leading-[1.85]">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <a href="/quote" className="btn-teal btn-teal-hover">
+            Book My Free Inspection — No Obligation <ArrowRight size={14} className="ml-2" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
@@ -646,11 +879,11 @@ function ContactForm() {
         setSubmitted(true);
       } else {
         const json = await res.json().catch(() => ({}));
-        console.error("Formspree error:", json);
+        console.error("Web3Forms error:", json);
         setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
       }
     } catch (err) {
-      console.error("Formspree fetch error:", err);
+      console.error("Web3Forms fetch error:", err);
       setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
     } finally {
       setLoading(false);
@@ -661,17 +894,17 @@ function ContactForm() {
     <section id="contact" aria-labelledby="contact-heading" className="section-pad bg-background">
       <div className="container-prose">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 lg:gap-24 items-start">
-          {/* left col — contact info */}
+          {/* left col */}
           <div>
-            <p className="eyebrow text-foreground/55 block mb-7">Free · No Obligation</p>
+            <p className="eyebrow text-foreground/55 block mb-7">Free · No Obligation · Reply in 1 Business Day</p>
             <h2 id="contact-heading" className="font-display uppercase font-semibold" style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", lineHeight: "1.02" }}>
-              Book Your Free
+              Ready to Stop
               <br />
-              <span className="teal-italic text-[1.1em]">On-Site Inspection</span>
+              <span className="teal-italic text-[1.1em]">Worrying About Your Roof?</span>
             </h2>
             <div className="mt-8 h-px w-14 bg-teal" aria-hidden="true" />
             <p className="mt-7 text-foreground/65 leading-[1.85]">
-              We'll come to you, assess your roof properly, and give you a detailed fixed-price quote — no obligation, no pressure, no surprises. Most inspections are booked within a few days.
+              Fill in the form and we'll call you within one business day to arrange your free on-site inspection. No pressure, no obligation — just straight answers and a fixed-price quote you can rely on.
             </p>
             <address className="not-italic mt-10 space-y-4">
               <a href="tel:YOUR_PHONE_NUMBER" className="flex items-center gap-4 group" aria-label="Call us on (08) XXXX XXXX">
@@ -702,7 +935,6 @@ function ContactForm() {
                 </div>
               </div>
             </address>
-            {/* trust signals */}
             <div className="mt-10 pt-8 border-t border-border grid grid-cols-1 gap-3">
               {[
                 { icon: "✓", text: "Free on-site inspection — we come to you" },
@@ -725,8 +957,8 @@ function ContactForm() {
                 <div className="mx-auto w-14 h-14 rounded-full bg-teal/15 flex items-center justify-center mb-5">
                   <Check size={26} className="text-teal" strokeWidth={2.5} />
                 </div>
-                <h3 className="font-display text-2xl font-semibold uppercase">Thanks, we'll be in touch!</h3>
-                <p className="mt-3 text-foreground/60 leading-relaxed">We'll contact you within one business day to arrange your free inspection.</p>
+                <h3 className="font-display text-2xl font-semibold uppercase">Thanks — we'll be in touch.</h3>
+                <p className="mt-3 text-foreground/60 leading-relaxed">We'll call you within one business day to arrange your free inspection.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate aria-label="Get a free roof replacement quote">
@@ -764,9 +996,9 @@ function ContactForm() {
                   </div>
                 </div>
                 <button type="submit" disabled={loading} className="btn-teal btn-teal-hover w-full mt-6 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none">
-                  {loading ? "Sending…" : "Send My Free Quote Request"}
+                  {loading ? "Sending…" : "Book My Free Inspection"}
                 </button>
-                <p className="mt-4 text-center text-xs text-foreground/40">We respect your privacy. No spam, ever.</p>
+                <p className="mt-4 text-center text-xs text-foreground/40">No obligation. We'll call you — not spam you.</p>
                 {error && (
                   <p className="mt-3 text-sm text-red-600 text-center leading-relaxed">{error}</p>
                 )}
@@ -786,7 +1018,7 @@ const FOOTER_LINKS = [
   { label: "Our Work", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Get a Quote", href: "/quote" },
+  { label: "Book Free Inspection", href: "/quote" },
 ];
 
 function Footer() {
@@ -797,7 +1029,7 @@ function Footer() {
           <div>
             <Logo />
             <p className="mt-6 text-sm text-foreground/65 max-w-xs leading-[1.85]">
-              Perth's trusted registered roof replacement specialists — fixed price, fully compliant, and backed by a workmanship guarantee.
+              We don't just replace roofs. We make sure they're done right — legally, structurally, and for the long term. That's our commitment to every Perth homeowner we work with.
             </p>
             <p className="mt-3 text-xs text-foreground/40">ABN XX XXX XXX XXX · BRN XXXXXXX</p>
           </div>
@@ -873,14 +1105,17 @@ function HomePage() {
       <Header />
       <main id="main-content" className="pt-[80px]">
         <Hero />
+        <div data-reveal><Problem /></div>
         <div data-reveal><Intro /></div>
         <div data-reveal><Services /></div>
         <div data-reveal><Trust /></div>
         <div data-reveal><Gallery /></div>
         <div data-reveal><Reviews /></div>
+        <div data-reveal><Process /></div>
         <div data-reveal><Approval /></div>
         <div data-reveal><Locals /></div>
         <div data-reveal><FAQs /></div>
+        <div data-reveal><RiskReversal /></div>
         <div data-reveal><ContactForm /></div>
         <Footer />
       </main>
