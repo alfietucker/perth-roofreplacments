@@ -39,7 +39,7 @@ const NAV_LINKS = [
   { label: "Our Work", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Contact", href: "#contact" },
+  { label: "Get a Quote", href: "/quote" },
 ];
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
@@ -95,7 +95,7 @@ function Header() {
           <a href="tel:YOUR_PHONE_NUMBER" className="hidden md:inline-flex items-center gap-2 text-[0.82rem] font-semibold text-foreground/80 hover:text-teal transition-colors mr-2" aria-label="Call us on (08) XXXX XXXX">
             <Phone size={14} aria-hidden="true" /> (08) XXXX XXXX
           </a>
-          <a href="#contact" className="hidden sm:inline-flex btn-teal btn-teal-hover">Get a Free Quote</a>
+          <a href="/quote" className="hidden sm:inline-flex btn-teal btn-teal-hover">Get a Free Quote</a>
           <button className="lg:hidden p-2 -mr-2 text-foreground" onClick={() => setOpen(!open)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-menu">
             {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>
@@ -109,7 +109,7 @@ function Header() {
                 {n.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-teal btn-teal-hover mt-3 sm:hidden">Get a Free Quote</a>
+            <a href="/quote" onClick={() => setOpen(false)} className="btn-teal btn-teal-hover mt-3 sm:hidden">Get a Free Quote</a>
           </div>
         </nav>
       )}
@@ -138,7 +138,7 @@ function Hero() {
               Built on experience. <span className="teal-italic text-[1.35em]">Driven by quality.</span>
             </p>
             <div className="mt-10 flex flex-wrap gap-4 items-center">
-              <a href="#contact" className="btn-teal btn-teal-hover">
+              <a href="/quote" className="btn-teal btn-teal-hover">
                 Get a Free Quote <ArrowRight size={14} className="ml-2" aria-hidden="true" />
               </a>
               <a href="tel:YOUR_PHONE_NUMBER" className="btn-outline-light" aria-label="Call us on (08) XXXX XXXX">
@@ -178,8 +178,8 @@ function Intro() {
           every trade to deliver a seamless, compliant, and high-quality roof replacement that lasts.
         </p>
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
-          <a href="#contact" className="btn-teal btn-teal-hover">Residential</a>
-          <a href="#contact" className="btn-teal btn-teal-hover">Commercial</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">Residential</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">Commercial</a>
         </div>
       </div>
     </section>
@@ -277,7 +277,7 @@ function Trust() {
               </li>
             ))}
           </ul>
-          <a href="#contact" className="btn-teal btn-teal-hover mt-12">Get a Free Quote</a>
+          <a href="/quote" className="btn-teal btn-teal-hover mt-12">Get a Free Quote</a>
         </div>
       </div>
     </section>
@@ -333,7 +333,7 @@ function Gallery() {
           ))}
         </ul>
         <div className="mt-10 text-center">
-          <a href="#contact" className="btn-teal btn-teal-hover">Get a Quote for Your Roof</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">Get a Quote for Your Roof</a>
         </div>
       </div>
 
@@ -474,7 +474,7 @@ function Reviews() {
 
         {/* controls */}
         <div className="mt-10 flex items-center justify-between">
-          <a href="#contact" className="btn-teal btn-teal-hover">Get a Free Quote</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">Get a Free Quote</a>
           <div className="flex gap-2" role="group" aria-label="Scroll reviews">
             <button
               onClick={() => scroll("left")}
@@ -523,7 +523,7 @@ function Approval() {
           This ensures your new roof meets regulations and you don't have any trouble selling your
           home down the track.
         </p>
-        <a href="#contact" className="btn-teal btn-teal-hover mt-9">How It Works</a>
+        <a href="/quote" className="btn-teal btn-teal-hover mt-9">How It Works</a>
       </div>
       <div className="container-prose mt-14">
         <div className="border-t border-b border-border/60 py-8">
@@ -565,7 +565,7 @@ function Locals() {
               reputation by delivering quality roof replacements across Perth and beyond — with
               honesty, workmanship, and real accountability.
             </p>
-            <a href="#contact" className="btn-teal btn-teal-hover mt-9">Get in Touch</a>
+            <a href="/quote" className="btn-teal btn-teal-hover mt-9">Get in Touch</a>
           </div>
         </div>
       </div>
@@ -627,7 +627,7 @@ function FAQs() {
           </dl>
           <div className="mt-10 text-center">
             <p className="text-foreground/55 text-sm">Still have questions?</p>
-            <a href="#contact" className="btn-teal btn-teal-hover mt-4">Ask Us Directly</a>
+            <a href="/quote" className="btn-teal btn-teal-hover mt-4">Ask Us Directly</a>
           </div>
         </div>
       </div>
@@ -779,7 +779,7 @@ const FOOTER_LINKS = [
   { label: "Our Work", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Contact", href: "#contact" },
+  { label: "Get a Quote", href: "/quote" },
 ];
 
 function Footer() {
