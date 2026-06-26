@@ -642,10 +642,11 @@ function ContactForm() {
     setLoading(true);
     setError(null);
     try {
+      const formData = new FormData(e.currentTarget);
       const res = await fetch("https://formspree.io/f/4da8256a-17ab-43d1-b4f7-178a0bfa1a4d", {
         method: "POST",
-        body: new FormData(e.currentTarget),
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(formData)),
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
       });
       if (res.ok) {
         setSubmitted(true);

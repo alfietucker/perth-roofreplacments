@@ -54,16 +54,15 @@ function QuotePage() {
     try {
       const res = await fetch("https://formspree.io/f/4da8256a-17ab-43d1-b4f7-178a0bfa1a4d", {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(data)),
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
       });
       if (res.ok) {
         setSubmitted(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         const json = await res.json().catch(() => ({}));
-        const msg = (json as { error?: string })?.error ?? `Error ${res.status}`;
-        console.error("Formspree error:", msg, json);
+        console.error("Formspree error:", res.status, json);
         setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
       }
     } catch (err) {
