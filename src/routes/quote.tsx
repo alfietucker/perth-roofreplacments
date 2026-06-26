@@ -41,6 +41,7 @@ const labelCls = "text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-
 function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [firstName, setFirstName] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -49,17 +50,25 @@ function QuotePage() {
     const data = new FormData(form);
     setFirstName((data.get("name") as string)?.split(" ")[0] ?? "");
     setLoading(true);
+    setError(null);
     try {
       const res = await fetch("https://formspree.io/f/4da8256a-17ab-43d1-b4f7-178a0bfa1a4d", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
       });
-      if (!res.ok) throw new Error("submission failed");
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      alert("Something went wrong — please call us directly on (08) XXXX XXXX.");
+      if (res.ok) {
+        setSubmitted(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const json = await res.json().catch(() => ({}));
+        const msg = (json as { error?: string })?.error ?? `Error ${res.status}`;
+        console.error("Formspree error:", msg, json);
+        setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
+      }
+    } catch (err) {
+      console.error("Formspree fetch error:", err);
+      setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
     } finally {
       setLoading(false);
     }
@@ -217,6 +226,9 @@ function QuotePage() {
                     <p className="mt-3.5 text-center text-[0.68rem] text-foreground/30 tracking-[0.12em] uppercase">
                       No obligation · Fixed-price quote · Reply within 1 business day
                     </p>
+                    {error && (
+                      <p className="mt-4 text-sm text-red-600 text-center leading-relaxed">{error}</p>
+                    )}
                   </div>
                 </form>
               </div>

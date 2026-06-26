@@ -635,20 +635,28 @@ function FAQs() {
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     try {
       const res = await fetch("https://formspree.io/f/4da8256a-17ab-43d1-b4f7-178a0bfa1a4d", {
         method: "POST",
         body: new FormData(e.currentTarget),
         headers: { Accept: "application/json" },
       });
-      if (!res.ok) throw new Error("submission failed");
-      setSubmitted(true);
-    } catch {
-      alert("Something went wrong — please call us directly on (08) XXXX XXXX.");
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const json = await res.json().catch(() => ({}));
+        console.error("Formspree error:", json);
+        setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
+      }
+    } catch (err) {
+      console.error("Formspree fetch error:", err);
+      setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
     } finally {
       setLoading(false);
     }
@@ -765,6 +773,9 @@ function ContactForm() {
                   {loading ? "Sending…" : "Send My Free Quote Request"}
                 </button>
                 <p className="mt-4 text-center text-xs text-foreground/40">We respect your privacy. No spam, ever.</p>
+                {error && (
+                  <p className="mt-3 text-sm text-red-600 text-center leading-relaxed">{error}</p>
+                )}
               </form>
             )}
           </div>
