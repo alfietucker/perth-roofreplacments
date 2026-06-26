@@ -1,0 +1,179 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-teal: var(--teal);
+  --color-teal-hover: var(--teal-hover);
+  --color-soft: var(--soft);
+  --color-muted-text: var(--muted-text);
+}
+
+:root {
+  --radius: 4px;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.31 0.03 235);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.31 0.03 235);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.31 0.03 235);
+  --primary: oklch(0.31 0.03 235);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.003 230);
+  --secondary-foreground: oklch(0.31 0.03 235);
+  --muted: oklch(0.97 0.003 230);
+  --muted-foreground: oklch(0.50 0.015 235);
+  --muted-text: oklch(0.50 0.015 235);
+  --accent: oklch(0.78 0.10 200);
+  --accent-foreground: oklch(0.20 0.02 235);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.005 230);
+  --input: oklch(0.92 0.005 230);
+  --ring: oklch(0.78 0.10 200);
+
+  --navy: oklch(0.27 0.025 235);
+  --navy-foreground: oklch(1 0 0);
+  --teal: oklch(0.78 0.10 200);
+  --teal-hover: oklch(0.72 0.11 200);
+  --soft: oklch(0.97 0.003 230);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.05;
+  }
+  p { line-height: 1.75; }
+}
+
+@utility container-prose {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@utility teal-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-teal);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@utility btn-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-teal);
+  color: oklch(0.20 0.02 235);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 1rem 1.85rem;
+  border-radius: 4px;
+  transition: background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+@utility btn-teal-hover {
+  &:hover {
+    background-color: var(--color-teal-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -14px rgba(32,55,70,0.45);
+  }
+}
+
+@utility btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 1rem 1.6rem;
+  border-radius: 4px;
+  transition: all 220ms ease;
+  &:hover { background-color: rgba(255,255,255,0.08); border-color: #fff; }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+@utility section-pad {
+  padding-block: 70px;
+  @media (min-width: 768px) {
+    padding-block: 120px;
+  }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-zoom {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+@utility reveal {
+  animation: reveal-up 0.6s ease-out both;
+}
+@utility hero-zoom {
+  animation: hero-zoom 14s ease-out both;
+}
