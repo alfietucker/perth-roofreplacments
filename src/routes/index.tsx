@@ -129,7 +129,6 @@ function Hero() {
       <div className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[750px] flex items-center">
         <div className="w-full" style={{ paddingLeft: "max(8%, 1.5rem)", paddingRight: "1.5rem" }}>
           <div className="max-w-[680px] text-white reveal">
-            <p className="eyebrow text-teal block mb-7">Perth · Registered Builders</p>
             <h1 className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(2.6rem, 6vw, 4.4rem)", lineHeight: "0.95", letterSpacing: "-0.01em" }}>
               Perth Roof
               <br />
