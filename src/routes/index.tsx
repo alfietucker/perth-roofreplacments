@@ -130,27 +130,27 @@ function Hero() {
         <div className="w-full" style={{ paddingLeft: "max(8%, 1.5rem)", paddingRight: "1.5rem" }}>
           <div className="max-w-[680px] text-white reveal">
             <h1 className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(2.6rem, 6vw, 4.4rem)", lineHeight: "0.95", letterSpacing: "-0.01em" }}>
-              Perth Roof
+              Perth's Registered
               <br />
-              Replacements
+              Roof Specialists
             </h1>
             <p className="mt-7 text-base sm:text-lg text-white/80 max-w-md leading-relaxed">
-              Built on experience. <span className="teal-italic text-[1.35em]">Driven by quality.</span>
+              We handle the permits, the trades, and the council approvals — so you don't have to. <span className="teal-italic text-[1.2em]">One fixed price. Zero stress.</span>
             </p>
             <div className="mt-10 flex flex-wrap gap-4 items-center">
               <a href="/quote" className="btn-teal btn-teal-hover">
-                Get a Free Quote <ArrowRight size={14} className="ml-2" aria-hidden="true" />
+                Book My Free Roof Inspection <ArrowRight size={14} className="ml-2" aria-hidden="true" />
               </a>
               <a href="tel:YOUR_PHONE_NUMBER" className="btn-outline-light" aria-label="Call us on (08) XXXX XXXX">
                 <Phone size={14} className="mr-2" aria-hidden="true" /> (08) XXXX XXXX
               </a>
             </div>
             <p className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem] tracking-[0.18em] uppercase text-white/35 font-medium" aria-label="Trust credentials">
-              <span>Registered Builder WA</span>
+              <span>Registered Builder WA · BRN XXXXXXX</span>
               <span className="h-3 w-px bg-white/20" aria-hidden="true" />
               <span>500+ Roofs Replaced</span>
               <span className="h-3 w-px bg-white/20" aria-hidden="true" />
-              <span>5.0★ Google Rating</span>
+              <span>5.0★ · 47 Google Reviews</span>
             </p>
           </div>
         </div>
@@ -167,19 +167,17 @@ function Intro() {
     <section id="replacements" aria-labelledby="intro-heading" className="section-pad bg-background">
       <div className="container-prose text-center">
         <div className="mx-auto h-px w-12 bg-teal mb-8" aria-hidden="true" />
-        <p className="eyebrow text-foreground/55">Built on Experience. Driven by Quality.</p>
+        <p className="eyebrow text-foreground/55">Perth's Only Registered Roof Replacement Specialists</p>
         <h2 id="intro-heading" className="mt-6 mx-auto font-display uppercase font-semibold" style={{ maxWidth: "720px", fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-          Premium <span className="teal-italic text-[1.1em]">Roof Replacements</span> for Perth Homes and{" "}
-          <span className="teal-italic text-[1.1em]">Businesses</span>
+          Fixed Price. <span className="teal-italic text-[1.1em]">Council Approved.</span> Done in{" "}
+          <span className="teal-italic text-[1.1em]">Days.</span>
         </h2>
         <p className="mt-8 mx-auto text-foreground/65 leading-[1.85] text-[1.02rem]" style={{ maxWidth: "780px" }}>
-          A new roof is a big investment, one you want done right the first time. At Perth Roof
-          Replacements, we're more than roofing contractors. As registered builders, we coordinate
-          every trade to deliver a seamless, compliant, and high-quality roof replacement that lasts.
+          A roof replacement is one of the biggest investments you'll make in your home. You need someone who won't cut corners, won't hit you with variations, and won't leave you to deal with council on your own. As registered builders, we manage every trade, every permit, and every inspection — so the job is done once, done right, and done to code.
         </p>
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
-          <a href="/quote" className="btn-teal btn-teal-hover">Residential</a>
-          <a href="/quote" className="btn-teal btn-teal-hover">Commercial</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">Residential Replacements</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">Commercial Replacements</a>
         </div>
       </div>
     </section>
@@ -227,9 +225,9 @@ function Services() {
 // ─── Trust ────────────────────────────────────────────────────────────────────
 
 const TRUST_BLOCKS = [
-  { title: "Done Once, Done Right", body: "We don't patch problems — we replace them with lasting solutions. As registered builders carrying out roof replacements in Perth, we expertly coordinate every trade to ensure your roof meets code, withstands local weather, and performs for years to come." },
-  { title: "What We Quote Is What You Pay", body: "No hidden costs. No surprise fees. We believe in transparent pricing, and we stick to it — because trust is built on certainty, not guesswork. All roof replacement quotes are based on thorough inspections and fully inclusive of all costs." },
-  { title: "Guaranteed Follow-Through", body: "If something goes wrong, we make it right. It's that simple. We stand by our work and stay accountable long after the last sheet is laid — because a quality roof replacement isn't just about day one, it's about long-term reliability." },
+  { title: "Done Once, Done Right", body: "A botched roof job is one of the most expensive mistakes a homeowner can make — and one of the hardest to fix. As registered builders, we coordinate every trade from start to finish, ensuring your replacement meets code, handles Perth's climate, and doesn't need touching again for decades." },
+  { title: "What We Quote Is What You Pay", body: "We've heard the stories — quotes that looked reasonable, then doubled by the time the last sheet was laid. That won't happen here. Every quote we give is based on a thorough on-site inspection and covers everything. No line items added later. No variations. No excuses." },
+  { title: "Guaranteed Follow-Through", body: "Our accountability doesn't end when the crew packs up. We back our workmanship with a guarantee, and if anything isn't right after the job is done, we come back and fix it. That's what it means to stand behind your work — not just on the day, but for the long term." },
 ];
 
 function Trust() {
@@ -239,16 +237,15 @@ function Trust() {
         <div>
           <p className="eyebrow text-foreground/55 block mb-7">Why Choose Us</p>
           <h2 id="trust-heading" className="font-display uppercase font-semibold" style={{ fontSize: "clamp(2.2rem, 4vw, 3.2rem)", lineHeight: "1.02" }}>
-            Registered
+            The Only
             <br />
-            Reliable
+            Roofer You
             <br />
-            <span className="teal-italic text-[1.05em]">Ready</span>
+            <span className="teal-italic text-[1.05em]">Need</span>
           </h2>
           <div className="mt-8 h-px w-14 bg-teal" aria-hidden="true" />
           <p className="mt-7 text-foreground/65 leading-[1.85] max-w-sm">
-            A West Australian roofing business backed by registered building credentials and a decade
-            of replacements done right.
+            Most roofing contractors can't legally handle council permits or sign off on compliance. As registered builders, we can — and we do, on every single job.
           </p>
           <div className="mt-8 space-y-2.5">
             {[
@@ -277,7 +274,7 @@ function Trust() {
               </li>
             ))}
           </ul>
-          <a href="/quote" className="btn-teal btn-teal-hover mt-12">Get a Free Quote</a>
+          <a href="/quote" className="btn-teal btn-teal-hover mt-12">Get My Fixed-Price Quote</a>
         </div>
       </div>
     </section>
@@ -333,7 +330,7 @@ function Gallery() {
           ))}
         </ul>
         <div className="mt-10 text-center">
-          <a href="/quote" className="btn-teal btn-teal-hover">Get a Quote for Your Roof</a>
+          <a href="/quote" className="btn-teal btn-teal-hover">See What Your Roof Replacement Costs</a>
         </div>
       </div>
 
@@ -411,7 +408,7 @@ function Reviews() {
       <div className="container-prose text-center mb-12">
         <p className="eyebrow text-foreground/55">Customer Reviews</p>
         <h2 id="reviews-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-          What Perth <span className="teal-italic text-[1.1em]">Homeowners Say</span>
+          500+ Perth Homeowners <span className="teal-italic text-[1.1em]">Have Made the Switch</span>
         </h2>
         <div className="mt-8 inline-flex items-center gap-3 border border-border bg-soft px-5 py-3.5">
           {GOOGLE_ICON}
@@ -470,7 +467,7 @@ function Reviews() {
 
       {/* controls — inside container */}
       <div className="container-prose mt-8 flex items-center justify-between">
-        <a href="/quote" className="btn-teal btn-teal-hover">Get a Free Quote</a>
+        <a href="/quote" className="btn-teal btn-teal-hover">Book My Free Roof Inspection</a>
         <div className="flex gap-2" role="group" aria-label="Scroll reviews">
           <button
             onClick={() => scroll("left")}
@@ -508,17 +505,14 @@ function Approval() {
   return (
     <section id="how" aria-labelledby="approval-heading" className="py-20 md:py-28 bg-soft">
       <div className="container-prose text-center max-w-2xl">
-        <p className="eyebrow text-foreground/55">How It Works</p>
+        <p className="eyebrow text-foreground/55">A Credential That Matters</p>
         <h2 id="approval-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.8rem)", lineHeight: "1.1" }}>
-          We Get <span className="teal-italic text-[1.1em]">Council Approval</span> For You
+          We Handle <span className="teal-italic text-[1.1em]">Council Approval</span> — Most Roofers Can't
         </h2>
         <p className="mt-7 text-foreground/65 leading-[1.85]">
-          Perth Roof Replacements is a registered builder, which means we are authorised to handle
-          the entire compliance process including council approvals, engineering checks, and permits.
-          This ensures your new roof meets regulations and you don't have any trouble selling your
-          home down the track.
+          Most roofing contractors in Perth are not registered builders. That means they cannot legally obtain permits, manage engineering sign-offs, or certify compliance with the Building Code. If they do the work anyway, you could face issues with your insurer, problems selling your home, or liability for non-compliant work. As a registered builder, Perth Roof Replacements is fully authorised to manage the entire compliance process — council approvals, engineering checks, permits, and inspections. Your roof is legal, insured, and protected.
         </p>
-        <a href="/quote" className="btn-teal btn-teal-hover mt-9">How It Works</a>
+        <a href="/quote" className="btn-teal btn-teal-hover mt-9">See What Your Roof Replacement Costs</a>
       </div>
       <div className="container-prose mt-14">
         <div className="border-t border-b border-border/60 py-8">
@@ -555,12 +549,9 @@ function Locals() {
             </h2>
             <div className="mt-7 h-px w-14 bg-teal" aria-hidden="true" />
             <p className="mt-7 text-white/80 leading-[1.85]">
-              As a proudly West Australian-owned business, Perth Roof Replacements understands local
-              homes, local weather, and the roofing standards that protect them best. We've built our
-              reputation by delivering quality roof replacements across Perth and beyond — with
-              honesty, workmanship, and real accountability.
+              We're a West Australian-owned business — not a national chain, not a franchise. We know Perth homes, Perth weather, and the roofing standards that matter here. Every job we take on is one we're willing to put our name to, and our reputation has been built entirely on delivering what we promise. Honest pricing. Quality workmanship. Real accountability.
             </p>
-            <a href="/quote" className="btn-teal btn-teal-hover mt-9">Get in Touch</a>
+            <a href="/quote" className="btn-teal btn-teal-hover mt-9">Get My Fixed-Price Quote</a>
           </div>
         </div>
       </div>
@@ -571,14 +562,14 @@ function Locals() {
 // ─── FAQs ─────────────────────────────────────────────────────────────────────
 
 const FAQS = [
-  { q: "Do you handle council approval for roof replacements?", a: "Yes. As a registered builder in Western Australia (BRN XXXXXXX), we handle the entire compliance process — council approvals, engineering checks, and permits. Your new roof meets every regulation, and you won't have any issues when it comes time to sell." },
-  { q: "How long does a full roof replacement take?", a: "Most residential roof replacements in Perth are completed within 1–3 days depending on roof size and complexity. We'll give you a precise timeframe during your free inspection and quote." },
-  { q: "What types of roofing do you replace?", a: "We replace tiles (terracotta and concrete) with Colorbond, replace existing Colorbond roofing, and safely remove and replace asbestos roofs with either Colorbond or tiles." },
-  { q: "Are there any hidden costs in your quotes?", a: "No. Our quotes are based on thorough on-site inspections and are fully inclusive. What we quote is what you pay — no hidden fees, no surprise variations." },
-  { q: "Do you remove asbestos roofing safely?", a: "Yes. We are licensed to carry out asbestos removal in Western Australia. All asbestos materials are removed, contained, and disposed of in accordance with WA WorkSafe regulations." },
-  { q: "What warranty do you offer?", a: "We provide a workmanship warranty on all our roof replacements. Colorbond steel products also carry their own manufacturer warranty. We'll walk you through all warranty details before work begins." },
-  { q: "Which Perth suburbs do you service?", a: "We service all Perth metro suburbs including the western suburbs, northern suburbs, southern suburbs, and the eastern corridor. Contact us to confirm availability in your specific suburb." },
-  { q: "How do I get a free quote?", a: "Simply fill in the contact form on this page or call us on (08) XXXX XXXX. We'll arrange a free on-site inspection at a time that suits you and provide a detailed, no-obligation quote." },
+  { q: "Do you handle council approval for roof replacements?", a: "Yes — and this is something most roofing contractors in Perth cannot legally do. Only registered builders are authorised to obtain permits, manage engineering sign-offs, and certify compliance with the Building Code. As a registered builder (BRN XXXXXXX), we handle the entire process for you: council approvals, engineering checks, permits, and inspections. If a contractor who isn't a registered builder does this work without the proper compliance, you could face serious problems with your insurer or when selling your home. With us, that risk doesn't exist." },
+  { q: "How much does a roof replacement cost in Perth?", a: "Most residential roof replacements in Perth range from $15,000 to $40,000 depending on roof size, pitch, material choice, and whether asbestos removal is involved. We don't give ballpark quotes over the phone — every property is different, and guessing helps no one. After a free on-site inspection, we'll give you a detailed, fixed-price quote with no hidden costs. What we quote is exactly what you pay." },
+  { q: "How long does a full roof replacement take?", a: "Most residential roof replacements in Perth are completed within 1–3 days. Larger or more complex roofs may take a little longer. We'll give you a precise timeframe during your free inspection — and we stick to it." },
+  { q: "What types of roofing do you replace?", a: "We replace terracotta and concrete tiles with Colorbond, replace worn or damaged Colorbond roofing, and safely remove and replace asbestos roofs with either Colorbond steel or quality tiles. Not sure what you have? We'll identify it during your free inspection." },
+  { q: "Are there any hidden costs in your quotes?", a: "Absolutely not. We've heard the stories of quotes that doubled by the time the job was done — and we built our business on being the opposite of that. Every quote we provide is based on a thorough on-site inspection and covers all costs, all trades, all materials. There are no line items added later, no surprise variations, and no pressure to upgrade. What we quote is what you pay, in writing, before work begins." },
+  { q: "Do you remove asbestos roofing safely?", a: "Yes. Asbestos removal is not something to take chances with, and we don't. We are fully licensed to carry out asbestos removal in Western Australia, and all work is conducted in strict compliance with WorkSafe WA regulations. Asbestos materials are safely contained, removed, and disposed of through authorised channels. You'll receive full documentation confirming the removal was completed to standard." },
+  { q: "What warranty do you offer?", a: "We provide a workmanship warranty on all roof replacements. Colorbond steel products also carry BlueScope's own manufacturer warranty. Before work begins, we'll walk you through all warranty details in full — so you know exactly what you're covered for, and for how long." },
+  { q: "Which Perth suburbs do you service?", a: "We service all Perth metro suburbs — western suburbs, northern suburbs, southern suburbs, and the eastern corridor. Give us a call or fill in the form and we'll confirm availability in your area." },
 ];
 
 function FAQs() {
@@ -622,7 +613,7 @@ function FAQs() {
           </dl>
           <div className="mt-10 text-center">
             <p className="text-foreground/55 text-sm">Still have questions?</p>
-            <a href="/quote" className="btn-teal btn-teal-hover mt-4">Ask Us Directly</a>
+            <a href="/quote" className="btn-teal btn-teal-hover mt-4">Book My Free Roof Inspection</a>
           </div>
         </div>
       </div>
@@ -672,16 +663,15 @@ function ContactForm() {
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 lg:gap-24 items-start">
           {/* left col — contact info */}
           <div>
-            <p className="eyebrow text-foreground/55 block mb-7">Get in Touch</p>
+            <p className="eyebrow text-foreground/55 block mb-7">Free · No Obligation</p>
             <h2 id="contact-heading" className="font-display uppercase font-semibold" style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", lineHeight: "1.02" }}>
-              Get Your
+              Book Your Free
               <br />
-              <span className="teal-italic text-[1.1em]">Free Quote</span>
+              <span className="teal-italic text-[1.1em]">On-Site Inspection</span>
             </h2>
             <div className="mt-8 h-px w-14 bg-teal" aria-hidden="true" />
             <p className="mt-7 text-foreground/65 leading-[1.85]">
-              Ready to replace your roof? Fill in the form and we'll get back to you within one
-              business day to arrange a free on-site inspection.
+              We'll come to you, assess your roof properly, and give you a detailed fixed-price quote — no obligation, no pressure, no surprises. Most inspections are booked within a few days.
             </p>
             <address className="not-italic mt-10 space-y-4">
               <a href="tel:YOUR_PHONE_NUMBER" className="flex items-center gap-4 group" aria-label="Call us on (08) XXXX XXXX">
@@ -715,10 +705,10 @@ function ContactForm() {
             {/* trust signals */}
             <div className="mt-10 pt-8 border-t border-border grid grid-cols-1 gap-3">
               {[
-                { icon: "✓", text: "Free on-site inspection & detailed quote" },
-                { icon: "✓", text: "No obligation — zero pressure guarantee" },
+                { icon: "✓", text: "Free on-site inspection — we come to you" },
+                { icon: "✓", text: "Detailed fixed-price quote — no hidden costs" },
                 { icon: "✓", text: "Reply within 1 business day" },
-                { icon: "✓", text: "Fixed price — no surprise variations" },
+                { icon: "✓", text: "No obligation — walk away anytime" },
               ].map((t) => (
                 <div key={t.text} className="flex items-center gap-3">
                   <span className="shrink-0 w-6 h-6 bg-teal/10 border border-teal/30 flex items-center justify-center text-teal text-xs font-bold" aria-hidden="true">{t.icon}</span>
@@ -807,7 +797,7 @@ function Footer() {
           <div>
             <Logo />
             <p className="mt-6 text-sm text-foreground/65 max-w-xs leading-[1.85]">
-              Registered building roof replacement specialists serving Perth and Western Australia.
+              Perth's trusted registered roof replacement specialists — fixed price, fully compliant, and backed by a workmanship guarantee.
             </p>
             <p className="mt-3 text-xs text-foreground/40">ABN XX XXX XXX XXX · BRN XXXXXXX</p>
           </div>
