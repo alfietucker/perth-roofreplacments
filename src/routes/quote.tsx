@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Check, Phone, Star, Shield, Clock, FileText } from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/quote")({
   head: () => ({
@@ -19,185 +19,166 @@ export const Route = createFileRoute("/quote")({
 
 const NEXT_STEPS = [
   {
-    icon: Phone,
-    title: "We call you",
-    body: "Within one business day, one of our team will call to confirm your details and find a time that suits.",
+    n: "01",
+    title: "We'll call you",
+    body: "Within one business day, one of our team will call to confirm your details and arrange a time that suits.",
   },
   {
-    icon: FileText,
+    n: "02",
     title: "Free on-site inspection",
-    body: "A qualified builder visits your property, assesses the roof in full, and answers any questions you have.",
+    body: "A qualified builder visits, assesses the roof in full, and answers any questions you have — no cost, no pressure.",
   },
   {
-    icon: Check,
-    title: "Fixed-price quote delivered",
-    body: "You receive a detailed, fully-inclusive written quote. No hidden costs. No pressure to proceed.",
+    n: "03",
+    title: "Fixed-price quote",
+    body: "You receive a detailed written quote, fully inclusive. What we quote is exactly what you pay.",
   },
 ];
+
+const inputCls = "border border-border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/25 focus:outline-none focus:border-teal transition-colors w-full";
+const labelCls = "text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-foreground/45 mb-1.5 block";
 
 function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    setName((form.elements.namedItem("name") as HTMLInputElement)?.value?.split(" ")[0] ?? "");
+    const data = new FormData(e.currentTarget);
+    setFirstName((data.get("name") as string)?.split(" ")[0] ?? "");
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 900);
+    }, 800);
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* slim nav */}
-      <header className="border-b border-border bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
+
+      {/* nav */}
+      <header className="border-b border-border shrink-0">
         <div className="container-prose flex items-center justify-between h-16">
-          <Link to="/" aria-label="Back to Perth Roof Replacements">
+          <Link to="/" aria-label="Back to home">
             <div className="flex items-center gap-3">
-              <svg width="34" height="34" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
                 <path d="M4 20L18 7l14 13" stroke="currentColor" strokeWidth="2.5" className="text-teal" />
                 <path d="M8 18v11h20V18" stroke="currentColor" strokeWidth="2.5" className="text-foreground" />
               </svg>
-              <div className="leading-none">
-                <div className="font-display text-[1.1rem] font-semibold tracking-wide uppercase text-foreground">
-                  Perth<span className="text-teal">Roof</span>
-                </div>
-              </div>
+              <span className="font-display text-[1.05rem] font-semibold tracking-wide uppercase text-foreground">
+                Perth<span className="text-teal">Roof</span>
+              </span>
             </div>
           </Link>
-          <a href="tel:YOUR_PHONE_NUMBER" className="hidden sm:flex items-center gap-2 text-[0.82rem] font-semibold text-foreground/70 hover:text-teal transition-colors">
-            <Phone size={14} aria-hidden="true" /> (08) XXXX XXXX
+          <a
+            href="tel:YOUR_PHONE_NUMBER"
+            className="hidden sm:flex items-center gap-2 text-[0.8rem] font-medium text-foreground/55 hover:text-teal transition-colors"
+          >
+            <Phone size={13} aria-hidden="true" /> (08) XXXX XXXX
           </a>
         </div>
       </header>
 
-      {submitted ? (
-        /* ── Confirmation ── */
-        <div className="container-prose max-w-2xl py-20 md:py-28">
-          <div className="text-center mb-14">
-            <div className="mx-auto w-16 h-16 bg-teal/10 flex items-center justify-center mb-7">
-              <Check size={30} className="text-teal" strokeWidth={2.5} />
+      <main className="flex-1">
+        {submitted ? (
+
+          /* ── Confirmation ───────────────────────────── */
+          <div className="container-prose max-w-xl py-20 md:py-28 text-center">
+            <div className="mx-auto w-14 h-14 bg-teal/10 flex items-center justify-center mb-8">
+              <Check size={26} className="text-teal" strokeWidth={2.5} />
             </div>
-            <h1 className="font-display uppercase font-semibold text-foreground" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: "1.05" }}>
-              {name ? `Thanks, ${name}.` : "Request received."}
+
+            <h1 className="font-display uppercase font-semibold" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: "1.05" }}>
+              {firstName ? `Thanks, ${firstName}.` : "Request received."}
               <br />
-              <span className="teal-italic text-[1.05em]">We'll be in touch.</span>
+              <span className="teal-italic">We'll be in touch.</span>
             </h1>
-            <p className="mt-6 text-foreground/60 leading-[1.85] max-w-md mx-auto">
-              Your request has been sent. One of our team will be in touch within one business day to lock in your free inspection.
+
+            <p className="mt-6 text-foreground/55 leading-[1.9] max-w-sm mx-auto">
+              We'll call you within one business day to arrange your free inspection.
             </p>
-          </div>
 
-          {/* next steps */}
-          <div className="border-t border-border pt-12">
-            <p className="eyebrow text-foreground/45 text-center mb-10">What happens next</p>
-            <ol className="space-y-0 list-none p-0 m-0">
-              {NEXT_STEPS.map((s, i) => (
-                <li key={s.title} className="flex gap-6 pb-10 last:pb-0 relative">
-                  {/* connector line */}
-                  {i < NEXT_STEPS.length - 1 && (
-                    <div className="absolute left-[19px] top-[44px] bottom-0 w-px bg-border" aria-hidden="true" />
-                  )}
-                  <div className="shrink-0 w-10 h-10 bg-teal/10 border border-teal/20 flex items-center justify-center z-10">
-                    <s.icon size={17} className="text-teal" aria-hidden="true" />
+            <div className="mt-16 text-left border-t border-border pt-12 space-y-10">
+              {NEXT_STEPS.map((s) => (
+                <div key={s.n} className="flex gap-7">
+                  <span className="font-display text-[2rem] font-semibold text-teal/20 leading-none shrink-0 w-10">{s.n}</span>
+                  <div>
+                    <p className="font-display font-semibold uppercase tracking-wide text-foreground">{s.title}</p>
+                    <p className="mt-1.5 text-sm text-foreground/55 leading-[1.85]">{s.body}</p>
                   </div>
-                  <div className="pt-1.5">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-[0.62rem] font-bold tracking-[0.2em] uppercase text-teal/60">Step {i + 1}</span>
-                    </div>
-                    <h2 className="font-display font-semibold uppercase tracking-wide text-foreground">{s.title}</h2>
-                    <p className="mt-2 text-foreground/60 leading-[1.85] text-sm">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <div className="mt-14 pt-10 border-t border-border text-center">
-            <p className="text-sm text-foreground/50 mb-5">Have questions in the meantime?</p>
-            <a href="tel:YOUR_PHONE_NUMBER" className="btn-teal btn-teal-hover">
-              <Phone size={14} className="mr-2" aria-hidden="true" /> Call (08) XXXX XXXX
-            </a>
-          </div>
-        </div>
-      ) : (
-        /* ── Form ── */
-        <div className="container-prose max-w-5xl py-14 md:py-20">
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-14 lg:gap-20 items-start">
-
-            {/* left — closer copy */}
-            <div className="lg:sticky lg:top-24">
-              <p className="eyebrow text-foreground/45 mb-6">Free · No Obligation</p>
-              <h1 className="font-display uppercase font-semibold text-foreground" style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", lineHeight: "1.02" }}>
-                Book Your
-                <br />
-                <span className="teal-italic text-[1.1em]">Free Roof Inspection</span>
-              </h1>
-              <div className="mt-7 h-px w-12 bg-teal" aria-hidden="true" />
-              <p className="mt-7 text-foreground/60 leading-[1.85]">
-                Fill in your details and we'll be in touch within one business day to arrange a free on-site inspection — at a time that suits you.
-              </p>
-
-              {/* micro trust */}
-              <ul className="mt-8 space-y-3 list-none p-0 m-0">
-                {[
-                  { icon: Check, text: "Fixed-price quote — no surprise variations" },
-                  { icon: Shield, text: "Registered builders · Licensed & insured" },
-                  { icon: Clock, text: "Reply within one business day" },
-                ].map((t) => (
-                  <li key={t.text} className="flex items-center gap-3 text-sm text-foreground/65">
-                    <t.icon size={14} className="text-teal shrink-0" aria-hidden="true" />
-                    {t.text}
-                  </li>
-                ))}
-              </ul>
-
-              {/* social proof */}
-              <div className="mt-10 pt-8 border-t border-border">
-                <div className="flex items-center gap-2 mb-3">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />)}
-                  <span className="font-display font-bold text-foreground ml-1">5.0</span>
-                  <span className="text-xs text-foreground/40">· 47 Google Reviews</span>
                 </div>
-                <blockquote className="text-sm text-foreground/55 leading-[1.8] italic border-l-2 border-teal/30 pl-4">
-                  "The price they quoted was exactly what we paid — no nasty surprises."
-                  <footer className="not-italic mt-1 text-foreground/35 text-xs">— James T., Applecross</footer>
-                </blockquote>
-              </div>
+              ))}
             </div>
 
-            {/* right — form */}
-            <div className="bg-soft border border-border p-8 md:p-10">
+            <div className="mt-14 pt-10 border-t border-border">
+              <a href="tel:YOUR_PHONE_NUMBER" className="btn-teal btn-teal-hover">
+                <Phone size={13} className="mr-2" aria-hidden="true" /> (08) XXXX XXXX
+              </a>
+              <p className="mt-4 text-xs text-foreground/35">Prefer not to wait? Call us directly.</p>
+            </div>
+          </div>
 
-              {/* urgency nudge */}
-              <div className="flex items-center gap-2.5 bg-teal/8 border border-teal/20 px-4 py-3 mb-8">
-                <div className="w-2 h-2 rounded-full bg-teal animate-pulse shrink-0" aria-hidden="true" />
-                <p className="text-xs text-foreground/70 font-medium">Now booking free inspections — limited slots available this month.</p>
+        ) : (
+
+          /* ── Form ───────────────────────────────────── */
+          <div className="container-prose max-w-5xl py-14 md:py-20">
+            <div className="grid lg:grid-cols-[1fr_1.45fr] gap-14 lg:gap-24 items-start">
+
+              {/* left */}
+              <div className="lg:sticky lg:top-20">
+                <h1 className="font-display uppercase font-semibold" style={{ fontSize: "clamp(2rem, 3.6vw, 2.9rem)", lineHeight: "1.02" }}>
+                  Book Your Free
+                  <br />
+                  <span className="teal-italic text-[1.08em]">Roof Inspection</span>
+                </h1>
+                <div className="mt-6 h-px w-10 bg-teal" aria-hidden="true" />
+                <p className="mt-6 text-foreground/55 leading-[1.9] text-[0.95rem]">
+                  Tell us about your roof and we'll arrange a free on-site inspection at a time that suits — no obligation, no cost.
+                </p>
+
+                <div className="mt-10 space-y-8">
+                  {NEXT_STEPS.map((s) => (
+                    <div key={s.n} className="flex gap-5">
+                      <span className="font-display text-[1.6rem] font-semibold text-teal/25 leading-none shrink-0 w-8 pt-0.5">{s.n}</span>
+                      <div>
+                        <p className="font-display font-semibold uppercase tracking-wide text-foreground text-sm">{s.title}</p>
+                        <p className="mt-1 text-xs text-foreground/45 leading-[1.85]">{s.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <form onSubmit={handleSubmit} noValidate aria-label="Book a free roof inspection">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-1.5 sm:col-span-2">
-                    <label htmlFor="q-name" className="text-xs font-semibold uppercase tracking-widest text-foreground/50">Full Name *</label>
-                    <input id="q-name" name="name" type="text" required autoComplete="name" placeholder="John Smith" className="border border-border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/25 focus:outline-none focus:border-teal transition-colors" />
+              {/* right — form */}
+              <div>
+                <form onSubmit={handleSubmit} noValidate aria-label="Book a free roof inspection" className="space-y-5">
+                  <div>
+                    <label htmlFor="q-name" className={labelCls}>Full Name *</label>
+                    <input id="q-name" name="name" type="text" required autoComplete="name" placeholder="John Smith" className={inputCls} />
                   </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="q-phone" className="text-xs font-semibold uppercase tracking-widest text-foreground/50">Phone *</label>
-                    <input id="q-phone" name="phone" type="tel" required autoComplete="tel" placeholder="0400 000 000" className="border border-border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/25 focus:outline-none focus:border-teal transition-colors" />
+
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div>
+                      <label htmlFor="q-phone" className={labelCls}>Phone *</label>
+                      <input id="q-phone" name="phone" type="tel" required autoComplete="tel" placeholder="0400 000 000" className={inputCls} />
+                    </div>
+                    <div>
+                      <label htmlFor="q-suburb" className={labelCls}>Suburb *</label>
+                      <input id="q-suburb" name="suburb" type="text" required autoComplete="address-level2" placeholder="Cottesloe" className={inputCls} />
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="q-suburb" className="text-xs font-semibold uppercase tracking-widest text-foreground/50">Suburb *</label>
-                    <input id="q-suburb" name="suburb" type="text" required autoComplete="address-level2" placeholder="Cottesloe" className="border border-border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/25 focus:outline-none focus:border-teal transition-colors" />
+
+                  <div>
+                    <label htmlFor="q-email" className={labelCls}>Email</label>
+                    <input id="q-email" name="email" type="email" autoComplete="email" placeholder="john@example.com" className={inputCls} />
                   </div>
-                  <div className="flex flex-col gap-1.5 sm:col-span-2">
-                    <label htmlFor="q-service" className="text-xs font-semibold uppercase tracking-widest text-foreground/50">What do you need?</label>
-                    <select id="q-service" name="service" className="border border-border bg-background px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-teal transition-colors appearance-none">
-                      <option value="">Select service…</option>
+
+                  <div>
+                    <label htmlFor="q-service" className={labelCls}>What do you need?</label>
+                    <select id="q-service" name="service" className={`${inputCls} appearance-none`}>
+                      <option value="">Select a service…</option>
                       <option>Replace Tiles with Colorbond</option>
                       <option>Replace Existing Colorbond</option>
                       <option>Replace Asbestos with Tiles</option>
@@ -205,29 +186,36 @@ function QuotePage() {
                       <option>Not sure — need advice</option>
                     </select>
                   </div>
-                  <div className="flex flex-col gap-1.5 sm:col-span-2">
-                    <label htmlFor="q-message" className="text-xs font-semibold uppercase tracking-widest text-foreground/50">Anything else we should know?</label>
-                    <textarea id="q-message" name="message" rows={3} placeholder="e.g. roof size, urgency, access notes…" className="border border-border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/25 focus:outline-none focus:border-teal transition-colors resize-none" />
-                  </div>
-                </div>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="btn-teal btn-teal-hover w-full mt-7 text-base py-4 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {loading ? "Sending…" : (
-                    <span className="flex items-center justify-center gap-2">
-                      Book My Free Inspection <ArrowRight size={15} aria-hidden="true" />
-                    </span>
-                  )}
-                </button>
-                <p className="mt-4 text-center text-[0.7rem] text-foreground/35 tracking-wide">No obligation · No pushy sales · 100% free</p>
-              </form>
+                  <div>
+                    <label htmlFor="q-message" className={labelCls}>Anything else?</label>
+                    <textarea id="q-message" name="message" rows={3} placeholder="Roof size, urgency, access — anything helpful…" className={`${inputCls} resize-none`} />
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="btn-teal btn-teal-hover w-full py-4 text-[0.9rem] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    >
+                      {loading ? "Sending…" : (
+                        <span className="flex items-center justify-center gap-2">
+                          Book My Free Inspection <ArrowRight size={14} aria-hidden="true" />
+                        </span>
+                      )}
+                    </button>
+                    <p className="mt-3.5 text-center text-[0.68rem] text-foreground/30 tracking-[0.12em] uppercase">
+                      No obligation · Fixed-price quote · Reply within 1 business day
+                    </p>
+                  </div>
+                </form>
+              </div>
+
             </div>
           </div>
-        </div>
-      )}
+
+        )}
+      </main>
     </div>
   );
 }
