@@ -52,9 +52,12 @@ function QuotePage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("https://formspree.io/f/4da8256a-17ab-43d1-b4f7-178a0bfa1a4d", {
+      const payload = Object.fromEntries(data);
+      payload.access_key = "4da8256a-17ab-43d1-b4f7-178a0bfa1a4d";
+      payload.subject = "New Roof Inspection Request — Perth Roof Replacements";
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: JSON.stringify(Object.fromEntries(data)),
+        body: JSON.stringify(payload),
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
       });
       if (res.ok) {
