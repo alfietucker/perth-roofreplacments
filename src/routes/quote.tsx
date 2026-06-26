@@ -43,16 +43,26 @@ function QuotePage() {
   const [loading, setLoading] = useState(false);
   const [firstName, setFirstName] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     setFirstName((data.get("name") as string)?.split(" ")[0] ?? "");
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("https://formspree.io/f/4da8256a-17ab-43d1-b4f7-178a0bfa1a4d", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("submission failed");
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 800);
+    } catch {
+      alert("Something went wrong — please call us directly on (08) XXXX XXXX.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
