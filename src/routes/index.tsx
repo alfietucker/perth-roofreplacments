@@ -405,97 +405,92 @@ function Reviews() {
   };
 
   return (
-    <section id="reviews" aria-labelledby="reviews-heading" className="section-pad bg-background overflow-hidden">
-      <div className="container-prose">
+    <section id="reviews" aria-labelledby="reviews-heading" className="section-pad bg-background">
 
-        {/* centred header block */}
-        <div className="text-center mb-14">
-          <p className="eyebrow text-foreground/55">Customer Reviews</p>
-          <h2 id="reviews-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-            What Perth <span className="teal-italic text-[1.1em]">Homeowners Say</span>
-          </h2>
-
-          {/* aggregate Google badge — centred, the trust anchor */}
-          <div className="mt-8 inline-flex items-center gap-4 border border-border bg-soft px-6 py-4">
-            {GOOGLE_ICON}
-            <div className="text-left">
-              <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-[1.35rem] leading-none text-foreground">5.0</span>
-                <div className="flex gap-px" aria-label="5 out of 5 stars">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />)}
-                </div>
+      {/* header — inside container */}
+      <div className="container-prose text-center mb-12">
+        <p className="eyebrow text-foreground/55">Customer Reviews</p>
+        <h2 id="reviews-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
+          What Perth <span className="teal-italic text-[1.1em]">Homeowners Say</span>
+        </h2>
+        <div className="mt-8 inline-flex items-center gap-3 border border-border bg-soft px-5 py-3.5">
+          {GOOGLE_ICON}
+          <div className="text-left">
+            <div className="flex items-center gap-1.5">
+              <span className="font-display font-bold text-lg leading-none text-foreground">5.0</span>
+              <div className="flex gap-px" aria-label="5 out of 5 stars">
+                {[...Array(5)].map((_, i) => <Star key={i} size={13} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />)}
               </div>
-              <p className="text-[0.7rem] text-foreground/45 tracking-wider uppercase mt-1">47 Google Reviews</p>
             </div>
+            <p className="text-[0.68rem] text-foreground/40 tracking-wider uppercase mt-0.5">47 Google Reviews</p>
           </div>
         </div>
+      </div>
 
-        {/* carousel track */}
-        <div
-          ref={trackRef}
-          onScroll={updateArrows}
-          className="flex gap-px overflow-x-auto snap-x snap-mandatory"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          role="list"
-          aria-label="Customer reviews"
-        >
-          {REVIEWS.map((r) => (
-            <article
-              key={r.name}
-              className="snap-start shrink-0 w-[85vw] sm:w-[420px] bg-soft p-10 flex flex-col"
-              role="listitem"
-              itemProp="review"
-              itemScope
-              itemType="https://schema.org/Review"
-            >
-              {/* stars */}
+      {/* track bleeds edge-to-edge on mobile, respects padding on desktop */}
+      <div
+        ref={trackRef}
+        onScroll={updateArrows}
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 sm:px-6 lg:px-[max(calc((100vw-1200px)/2+1.5rem),1.5rem)]"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        role="list"
+        aria-label="Customer reviews"
+      >
+        {REVIEWS.map((r) => (
+          <article
+            key={r.name}
+            className="snap-start shrink-0 w-[82vw] sm:w-72 md:w-80 lg:w-[360px] bg-soft p-7 flex flex-col"
+            role="listitem"
+            itemProp="review"
+            itemScope
+            itemType="https://schema.org/Review"
+          >
+            <div className="flex items-center justify-between mb-5">
               <div className="flex gap-0.5" aria-label={`${r.rating} out of 5 stars`}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                  <Star key={i} size={13} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />
                 ))}
               </div>
+              <div className="opacity-20">{GOOGLE_ICON}</div>
+            </div>
 
-              {/* quote */}
-              <p className="mt-6 text-foreground/75 leading-[1.95] text-[0.93rem] flex-1" itemProp="reviewBody">
-                "{r.text}"
-              </p>
+            <p className="text-foreground/70 leading-[1.9] text-[0.88rem] flex-1" itemProp="reviewBody">
+              "{r.text}"
+            </p>
 
-              {/* attribution */}
-              <div className="mt-8 flex items-center justify-between" itemProp="author" itemScope itemType="https://schema.org/Person">
-                <div>
-                  <p className="font-display font-semibold uppercase tracking-[0.14em] text-foreground text-[0.78rem]" itemProp="name">{r.name}</p>
-                  <p className="text-foreground/40 text-[0.7rem] mt-1">{r.suburb}, WA · <time>{r.date}</time></p>
-                </div>
-                <div className="opacity-25">{GOOGLE_ICON}</div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* controls */}
-        <div className="mt-10 flex items-center justify-between">
-          <a href="/quote" className="btn-teal btn-teal-hover">Get a Free Quote</a>
-          <div className="flex gap-2" role="group" aria-label="Scroll reviews">
-            <button
-              onClick={() => scroll("left")}
-              disabled={!canLeft}
-              aria-label="Previous reviews"
-              className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronLeft size={17} aria-hidden="true" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              disabled={!canRight}
-              aria-label="Next reviews"
-              className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronRight size={17} aria-hidden="true" />
-            </button>
-          </div>
-        </div>
-
+            <div className="mt-6 pt-5 border-t border-border" itemProp="author" itemScope itemType="https://schema.org/Person">
+              <p className="font-display font-semibold uppercase tracking-[0.12em] text-foreground text-[0.75rem]" itemProp="name">{r.name}</p>
+              <p className="text-foreground/35 text-[0.68rem] mt-0.5">{r.suburb}, WA · <time>{r.date}</time></p>
+            </div>
+          </article>
+        ))}
+        {/* right padding sentinel */}
+        <div className="shrink-0 w-4 sm:w-6 lg:w-[max(calc((100vw-1200px)/2+1.5rem),1.5rem)]" aria-hidden="true" />
       </div>
+
+      {/* controls — inside container */}
+      <div className="container-prose mt-8 flex items-center justify-between">
+        <a href="/quote" className="btn-teal btn-teal-hover">Get a Free Quote</a>
+        <div className="flex gap-2" role="group" aria-label="Scroll reviews">
+          <button
+            onClick={() => scroll("left")}
+            disabled={!canLeft}
+            aria-label="Previous reviews"
+            className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
+          >
+            <ChevronLeft size={17} aria-hidden="true" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            disabled={!canRight}
+            aria-label="Next reviews"
+            className="w-10 h-10 border border-border flex items-center justify-center text-foreground/40 hover:text-teal hover:border-teal disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
+          >
+            <ChevronRight size={17} aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+
     </section>
   );
 }
