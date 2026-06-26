@@ -24,8 +24,8 @@ const LOCAL_BUSINESS_SCHEMA = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/og-image.jpg`,
-  telephone: "+61861881355",
-  email: "admin@perthroof.com.au",
+  telephone: "YOUR_PHONE_NUMBER",
+  email: "hello@youremail.com.au",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Perth",
@@ -50,7 +50,7 @@ const LOCAL_BUSINESS_SCHEMA = {
     },
   ],
   hasCredential: [
-    { "@type": "EducationalOccupationalCredential", credentialCategory: "Registered Builder", name: "BC105894" },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Registered Builder", name: "XXXXXXX" },
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Master Builders Association Member" },
   ],
   aggregateRating: {
@@ -61,8 +61,8 @@ const LOCAL_BUSINESS_SCHEMA = {
     worstRating: "1",
   },
   identifier: [
-    { "@type": "PropertyValue", name: "ABN", value: "57 682 105 015" },
-    { "@type": "PropertyValue", name: "BRN", value: "BC105894" },
+    { "@type": "PropertyValue", name: "ABN", value: "XX XXX XXX XXX" },
+    { "@type": "PropertyValue", name: "BRN", value: "XXXXXXX" },
   ],
   priceRange: "$$",
   currenciesAccepted: "AUD",
@@ -92,7 +92,7 @@ const FAQ_SCHEMA = {
       name: "Do you handle council approval for roof replacements in Perth?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. As a registered builder in Western Australia (BRN BC105894), Perth Roof Replacements handles the entire compliance process including council approvals, engineering checks, and permits. Your new roof meets every regulation.",
+        text: "Yes. As a registered builder in Western Australia (BRN XXXXXXX), Perth Roof Replacements handles the entire compliance process including council approvals, engineering checks, and permits. Your new roof meets every regulation.",
       },
     },
     {
@@ -191,7 +191,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Expert roof replacements across Perth. Registered builders (BRN BC105894) delivering Colorbond, tile and asbestos roof replacements with full council approval. Get a free quote today.",
+          "Expert roof replacements across Perth. Registered builders (BRN XXXXXXX) delivering Colorbond, tile and asbestos roof replacements with full council approval. Get a free quote today.",
       },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
       { name: "author", content: "Perth Roof Replacements" },

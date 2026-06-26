@@ -92,8 +92,8 @@ function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="tel:+61861881355" className="hidden md:inline-flex items-center gap-2 text-[0.82rem] font-semibold text-foreground/80 hover:text-teal transition-colors mr-2" aria-label="Call us on (08) 6188 1355">
-            <Phone size={14} aria-hidden="true" /> (08) 6188 1355
+          <a href="tel:YOUR_PHONE_NUMBER" className="hidden md:inline-flex items-center gap-2 text-[0.82rem] font-semibold text-foreground/80 hover:text-teal transition-colors mr-2" aria-label="Call us on (08) XXXX XXXX">
+            <Phone size={14} aria-hidden="true" /> (08) XXXX XXXX
           </a>
           <a href="#contact" className="hidden sm:inline-flex btn-teal btn-teal-hover">Get a Free Quote</a>
           <button className="lg:hidden p-2 -mr-2 text-foreground" onClick={() => setOpen(!open)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-menu">
@@ -141,8 +141,8 @@ function Hero() {
               <a href="#contact" className="btn-teal btn-teal-hover">
                 Get a Free Quote <ArrowRight size={14} className="ml-2" aria-hidden="true" />
               </a>
-              <a href="tel:+61861881355" className="btn-outline-light" aria-label="Call us on (08) 6188 1355">
-                <Phone size={14} className="mr-2" aria-hidden="true" /> (08) 6188 1355
+              <a href="tel:YOUR_PHONE_NUMBER" className="btn-outline-light" aria-label="Call us on (08) XXXX XXXX">
+                <Phone size={14} className="mr-2" aria-hidden="true" /> (08) XXXX XXXX
               </a>
             </div>
             <p className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem] tracking-[0.18em] uppercase text-white/35 font-medium" aria-label="Trust credentials">
@@ -252,8 +252,8 @@ function Trust() {
           </p>
           <div className="mt-8 space-y-2.5">
             {[
-              "Registered Builder · BRN BC105894",
-              "ABN 57 682 105 015",
+              "Registered Builder · BRN XXXXXXX",
+              "ABN XX XXX XXX XXX",
               "Member · Master Builders WA",
             ].map((line) => (
               <div key={line} className="flex items-center gap-3 text-sm text-foreground/60">
@@ -576,14 +576,14 @@ function Locals() {
 // ─── FAQs ─────────────────────────────────────────────────────────────────────
 
 const FAQS = [
-  { q: "Do you handle council approval for roof replacements?", a: "Yes. As a registered builder in Western Australia (BRN BC105894), we handle the entire compliance process — council approvals, engineering checks, and permits. Your new roof meets every regulation, and you won't have any issues when it comes time to sell." },
+  { q: "Do you handle council approval for roof replacements?", a: "Yes. As a registered builder in Western Australia (BRN XXXXXXX), we handle the entire compliance process — council approvals, engineering checks, and permits. Your new roof meets every regulation, and you won't have any issues when it comes time to sell." },
   { q: "How long does a full roof replacement take?", a: "Most residential roof replacements in Perth are completed within 1–3 days depending on roof size and complexity. We'll give you a precise timeframe during your free inspection and quote." },
   { q: "What types of roofing do you replace?", a: "We replace tiles (terracotta and concrete) with Colorbond, replace existing Colorbond roofing, and safely remove and replace asbestos roofs with either Colorbond or tiles." },
   { q: "Are there any hidden costs in your quotes?", a: "No. Our quotes are based on thorough on-site inspections and are fully inclusive. What we quote is what you pay — no hidden fees, no surprise variations." },
   { q: "Do you remove asbestos roofing safely?", a: "Yes. We are licensed to carry out asbestos removal in Western Australia. All asbestos materials are removed, contained, and disposed of in accordance with WA WorkSafe regulations." },
   { q: "What warranty do you offer?", a: "We provide a workmanship warranty on all our roof replacements. Colorbond steel products also carry their own manufacturer warranty. We'll walk you through all warranty details before work begins." },
   { q: "Which Perth suburbs do you service?", a: "We service all Perth metro suburbs including the western suburbs, northern suburbs, southern suburbs, and the eastern corridor. Contact us to confirm availability in your specific suburb." },
-  { q: "How do I get a free quote?", a: "Simply fill in the contact form on this page or call us on (08) 6188 1355. We'll arrange a free on-site inspection at a time that suits you and provide a detailed, no-obligation quote." },
+  { q: "How do I get a free quote?", a: "Simply fill in the contact form on this page or call us on (08) XXXX XXXX. We'll arrange a free on-site inspection at a time that suits you and provide a detailed, no-obligation quote." },
 ];
 
 function FAQs() {
@@ -670,22 +670,22 @@ function ContactForm() {
               business day to arrange a free on-site inspection.
             </p>
             <address className="not-italic mt-10 space-y-4">
-              <a href="tel:+61861881355" className="flex items-center gap-4 group" aria-label="Call us on (08) 6188 1355">
+              <a href="tel:YOUR_PHONE_NUMBER" className="flex items-center gap-4 group" aria-label="Call us on (08) XXXX XXXX">
                 <span className="shrink-0 w-10 h-10 border border-border flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-white group-hover:border-teal transition-all">
                   <Phone size={15} aria-hidden="true" />
                 </span>
                 <div>
                   <p className="text-xs text-foreground/45 uppercase tracking-widest font-medium">Phone</p>
-                  <p className="font-semibold text-foreground group-hover:text-teal transition-colors">(08) 6188 1355</p>
+                  <p className="font-semibold text-foreground group-hover:text-teal transition-colors">(08) XXXX XXXX</p>
                 </div>
               </a>
-              <a href="mailto:admin@perthroof.com.au" className="flex items-center gap-4 group" aria-label="Email admin@perthroof.com.au">
+              <a href="mailto:hello@youremail.com.au" className="flex items-center gap-4 group" aria-label="Email hello@youremail.com.au">
                 <span className="shrink-0 w-10 h-10 border border-border flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-white group-hover:border-teal transition-all">
                   <Mail size={15} aria-hidden="true" />
                 </span>
                 <div>
                   <p className="text-xs text-foreground/45 uppercase tracking-widest font-medium">Email</p>
-                  <p className="font-semibold text-foreground group-hover:text-teal transition-colors">admin@perthroof.com.au</p>
+                  <p className="font-semibold text-foreground group-hover:text-teal transition-colors">hello@youremail.com.au</p>
                 </div>
               </a>
               <div className="flex items-center gap-4">
@@ -792,7 +792,7 @@ function Footer() {
             <p className="mt-6 text-sm text-foreground/65 max-w-xs leading-[1.85]">
               Registered building roof replacement specialists serving Perth and Western Australia.
             </p>
-            <p className="mt-3 text-xs text-foreground/40">ABN 57 682 105 015 · BRN BC105894</p>
+            <p className="mt-3 text-xs text-foreground/40">ABN XX XXX XXX XXX · BRN XXXXXXX</p>
           </div>
           <nav aria-label="Footer navigation">
             <h3 className="eyebrow text-foreground/55">Quick Links</h3>
@@ -807,11 +807,11 @@ function Footer() {
             <address className="not-italic mt-6 space-y-3 text-sm text-foreground/75">
               <p className="flex items-center gap-3">
                 <Mail size={14} className="text-teal shrink-0" aria-hidden="true" />
-                <a href="mailto:admin@perthroof.com.au" className="hover:text-teal transition-colors">admin@perthroof.com.au</a>
+                <a href="mailto:hello@youremail.com.au" className="hover:text-teal transition-colors">hello@youremail.com.au</a>
               </p>
               <p className="flex items-center gap-3">
                 <Phone size={14} className="text-teal shrink-0" aria-hidden="true" />
-                <a href="tel:+61861881355" className="hover:text-teal transition-colors">(08) 6188 1355</a>
+                <a href="tel:YOUR_PHONE_NUMBER" className="hover:text-teal transition-colors">(08) XXXX XXXX</a>
               </p>
               <p className="flex items-center gap-3">
                 <MapPin size={14} className="text-teal shrink-0" aria-hidden="true" />
