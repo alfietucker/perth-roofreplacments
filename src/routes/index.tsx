@@ -146,6 +146,19 @@ function Hero() {
                 <Phone size={14} className="mr-2" aria-hidden="true" /> (08) 6188 1355
               </a>
             </div>
+            <ul className="mt-10 flex flex-wrap gap-2.5 list-none p-0 m-0" aria-label="Key credentials">
+              {[
+                { value: "500+", label: "Roofs Replaced" },
+                { value: "10+", label: "Years Experience" },
+                { value: "100%", label: "Licensed & Insured" },
+                { value: "5.0★", label: "Google Rating" },
+              ].map((s) => (
+                <li key={s.label} className="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-2">
+                  <span className="font-display font-semibold text-teal text-sm leading-none">{s.value}</span>
+                  <span className="text-white/55 text-[0.68rem] tracking-[0.12em] uppercase font-medium">{s.label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -153,31 +166,6 @@ function Hero() {
   );
 }
 
-// ─── Stats Bar ────────────────────────────────────────────────────────────────
-
-const STATS = [
-  { value: "500+", label: "Roofs Replaced" },
-  { value: "10+", label: "Years Experience" },
-  { value: "100%", label: "Licensed & Insured" },
-  { value: "5.0★", label: "Google Rating" },
-];
-
-function StatsBar() {
-  return (
-    <div className="bg-navy" aria-label="Our credentials at a glance">
-      <div className="container-prose">
-        <ul className="grid grid-cols-2 md:grid-cols-4 list-none p-0 m-0" role="list">
-          {STATS.map((s, i) => (
-            <li key={s.label} className={`py-8 text-center ${i < STATS.length - 1 ? "md:border-r border-white/10" : ""}`}>
-              <div className="font-display text-teal font-semibold" style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)" }}>{s.value}</div>
-              <div className="mt-1 text-white/65 text-xs tracking-[0.18em] uppercase font-medium">{s.label}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
 
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
@@ -885,7 +873,6 @@ function HomePage() {
       <Header />
       <main id="main-content" className="pt-[80px]">
         <Hero />
-        <StatsBar />
         <div data-reveal><Intro /></div>
         <div data-reveal><Services /></div>
         <div data-reveal><Trust /></div>
