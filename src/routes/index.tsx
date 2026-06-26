@@ -149,15 +149,6 @@ function Hero() {
                 <Phone size={14} className="mr-2" aria-hidden="true" /> Prefer to call? We're here.
               </a>
             </div>
-            <p className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem] tracking-[0.18em] uppercase text-white/35 font-medium" aria-label="Trust credentials">
-              <span>Registered Builder WA · BRN XXXXXXX</span>
-              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
-              <span>500+ Roofs Replaced</span>
-              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
-              <span>5.0★ · 47 Google Reviews</span>
-              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
-              <span>Council Approvals Included</span>
-            </p>
           </div>
         </div>
       </div>
@@ -177,16 +168,8 @@ function Problem() {
           <span className="teal-italic text-[1.08em]">What They're Really Signing Up For</span>
         </h2>
         <p className="mt-8 text-white/65 leading-[1.9] text-[1.02rem] max-w-2xl mx-auto">
-          You get a quote. Sounds reasonable. Then the job starts — and the variations roll in. Unexpected costs. A crew that disappears mid-week. Council sending letters because the permits weren't lodged properly. And a roof that, six months later, leaks exactly where the old one did.
+          You get a quote. Sounds reasonable. Then the variations roll in — unexpected costs, a crew that disappears, council letters because the permits weren't lodged properly. Most roofing contractors in Perth aren't registered builders. They can't legally handle permits or compliance. When things go wrong, it's your home, your liability.
         </p>
-        <p className="mt-5 text-white/65 leading-[1.9] text-[1.02rem] max-w-2xl mx-auto">
-          This happens more than you'd think — because most roofing contractors in Perth are not registered builders. They can't legally obtain permits, manage engineering sign-offs, or certify compliance. When things go wrong, it's your problem, your liability, your home.
-        </p>
-        <div className="mt-10 inline-block border-t border-teal/30 pt-8">
-          <p className="text-teal font-display font-semibold uppercase tracking-[0.18em] text-sm">
-            There's a better way to replace a roof.
-          </p>
-        </div>
       </div>
     </section>
   );
@@ -207,9 +190,8 @@ function Intro() {
         <p className="mt-8 mx-auto text-foreground/65 leading-[1.85] text-[1.02rem]" style={{ maxWidth: "780px" }}>
           A roof replacement is one of the biggest investments you'll make in your home. You need someone who won't cut corners, won't hit you with variations, and won't leave you to deal with council on your own. As registered builders, we manage every trade, every permit, and every inspection — so the job is done once, done right, and done to code.
         </p>
-        <div className="mt-10 flex flex-wrap gap-3 justify-center">
-          <a href="/quote" className="btn-teal btn-teal-hover">Residential Replacements</a>
-          <a href="/quote" className="btn-teal btn-teal-hover">Commercial Replacements</a>
+        <div className="mt-10">
+          <a href="/quote" className="btn-teal btn-teal-hover">Book My Free Roof Inspection</a>
         </div>
       </div>
     </section>
@@ -231,28 +213,24 @@ const SERVICE_ITEMS = [
   {
     title: "Replace Tiles With Colorbond",
     outcome: "Lighter load. Decades of protection.",
-    fear: "Old terracotta cracking? We replace it completely — council approved, fixed price.",
     description: "Professional replacement of existing terracotta or concrete roof tiles with premium Colorbond steel roofing in Perth.",
     icon: "M8 30L32 14l24 16M14 30v20h36V30M14 38h36M14 44h36",
   },
   {
     title: "Replace Existing Colorbond",
     outcome: "Stronger. Quieter. Better looking.",
-    fear: "Rust, leaks, lifting sheets? We strip it and start fresh — no patchwork.",
     description: "Upgrade worn or damaged Colorbond roofing with new premium Colorbond steel — stronger, longer-lasting finish.",
     icon: "M6 26h52M10 26v24h44V26M10 34h44M10 42h44M10 50h44",
   },
   {
     title: "Replace Asbestos With Tiles",
     outcome: "Safe removal. Peace of mind restored.",
-    fear: "Asbestos isn't something to leave. We remove it safely — fully licensed, fully documented.",
     description: "Safe licensed asbestos roof removal and replacement with quality concrete or terracotta tiles across Perth.",
     icon: "M10 28h44l-6-10H16zM14 28v22h36V28M18 32l4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4",
   },
   {
     title: "Replace Asbestos With Colorbond",
     outcome: "Modern, durable, and fully compliant.",
-    fear: "One of Perth's most common upgrades — and one we handle start to finish, permits included.",
     description: "Safe licensed asbestos roof removal and replacement with durable Colorbond steel roofing for Perth homes.",
     icon: "M10 28h44l-6-10H16zM14 28v22h36V28M14 34h36M14 40h36M14 46h36",
   },
@@ -270,17 +248,13 @@ function Services() {
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0" role="list">
           {SERVICE_ITEMS.map((s) => (
-            <li key={s.title} className="group bg-background p-8 flex flex-col border border-border/60 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_18px_40px_-22px_rgba(32,55,70,0.28)] hover:border-teal/50">
+            <li key={s.title} className="group bg-background p-8 flex flex-col items-center text-center border border-border/60 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_18px_40px_-22px_rgba(32,55,70,0.28)] hover:border-teal/50">
               <div className="mb-6 transition-transform duration-300 group-hover:scale-105">
                 <ServiceIcon d={s.icon} title={s.title} />
               </div>
               <h3 className="text-[0.82rem] tracking-[0.16em] uppercase font-semibold leading-snug font-display">{s.title}</h3>
               <p className="mt-3 text-teal font-semibold text-[0.82rem] leading-snug">{s.outcome}</p>
-              <p className="mt-2 text-foreground/55 text-[0.78rem] leading-[1.75]">{s.fear}</p>
               <p className="sr-only">{s.description}</p>
-              <a href="/quote" className="mt-6 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-teal hover:text-teal-hover transition-colors flex items-center gap-1.5">
-                Get a Quote <ArrowRight size={11} aria-hidden="true" />
-              </a>
             </li>
           ))}
         </ul>
@@ -686,18 +660,8 @@ const PARTNER_BRANDS = [
 
 function Approval() {
   return (
-    <section aria-labelledby="approval-heading" className="py-20 md:py-28 bg-background">
-      <div className="container-prose text-center max-w-2xl">
-        <p className="eyebrow text-foreground/55">A Credential That Matters</p>
-        <h2 id="approval-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.8rem)", lineHeight: "1.1" }}>
-          We Handle <span className="teal-italic text-[1.1em]">Council Approval</span> — Most Roofers Can't
-        </h2>
-        <p className="mt-7 text-foreground/65 leading-[1.85]">
-          Most roofing contractors in Perth are not registered builders. That means they cannot legally obtain permits, manage engineering sign-offs, or certify compliance with the Building Code. If they do the work anyway, you could face issues with your insurer, problems selling your home, or liability for non-compliant work. As a registered builder, Perth Roof Replacements is fully authorised to manage the entire compliance process — council approvals, engineering checks, permits, and inspections. Your roof is legal, insured, and protected.
-        </p>
-        <a href="/quote" className="btn-teal btn-teal-hover mt-9">See What Your Roof Replacement Costs</a>
-      </div>
-      <div className="container-prose mt-14">
+    <section aria-label="Accreditations and approved products" className="bg-background">
+      <div className="container-prose">
         <div className="border-t border-b border-border/60 py-8">
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center list-none p-0 m-0" aria-label="Accreditations and approved products">
             {PARTNER_BRANDS.map((b) => (
@@ -935,19 +899,6 @@ function ContactForm() {
                 </div>
               </div>
             </address>
-            <div className="mt-10 pt-8 border-t border-border grid grid-cols-1 gap-3">
-              {[
-                { icon: "✓", text: "Free on-site inspection — we come to you" },
-                { icon: "✓", text: "Detailed fixed-price quote — no hidden costs" },
-                { icon: "✓", text: "Reply within 1 business day" },
-                { icon: "✓", text: "No obligation — walk away anytime" },
-              ].map((t) => (
-                <div key={t.text} className="flex items-center gap-3">
-                  <span className="shrink-0 w-6 h-6 bg-teal/10 border border-teal/30 flex items-center justify-center text-teal text-xs font-bold" aria-hidden="true">{t.icon}</span>
-                  <span className="text-sm text-foreground/70">{t.text}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* right col — form */}
