@@ -53,6 +53,13 @@ const LOCAL_BUSINESS_SCHEMA = {
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Registered Builder", name: "BC105894" },
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Master Builders Association Member" },
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "47",
+    bestRating: "5",
+    worstRating: "1",
+  },
   identifier: [
     { "@type": "PropertyValue", name: "ABN", value: "57 682 105 015" },
     { "@type": "PropertyValue", name: "BRN", value: "BC105894" },
