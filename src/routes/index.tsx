@@ -149,6 +149,14 @@ function Hero() {
                 <Phone size={14} className="mr-2" aria-hidden="true" /> Prefer to call? We're here.
               </a>
             </div>
+            <div className="mt-9 flex items-center gap-3 text-white/70">
+              <div className="flex gap-0.5" aria-label="5 out of 5 stars">
+                {[...Array(5)].map((_, i) => <Star key={i} size={15} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />)}
+              </div>
+              <span className="text-[0.82rem]">
+                <span className="font-semibold text-white">5.0</span> from 47 Google reviews · Registered Builder WA
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -238,7 +246,7 @@ const SERVICE_ITEMS = [
 
 function Services() {
   return (
-    <section id="services" aria-label="Our roof replacement services" className="py-20 md:py-28 bg-soft">
+    <section id="services" aria-label="Our roof replacement services" className="section-pad bg-soft">
       <div className="container-prose">
         <div className="text-center mb-14">
           <p className="eyebrow text-foreground/55">What We Do</p>
@@ -759,12 +767,12 @@ function RiskReversal() {
 // ─── FAQs ─────────────────────────────────────────────────────────────────────
 
 const FAQS = [
-  { q: "Do you handle council approval for roof replacements?", a: "Yes — and this is something most roofing contractors in Perth cannot legally do. Only registered builders are authorised to obtain permits, manage engineering sign-offs, and certify compliance with the Building Code. As a registered builder (BRN XXXXXXX), we handle the entire process for you: council approvals, engineering checks, permits, and inspections. If a contractor who isn't a registered builder does this work without the proper compliance, you could face serious problems with your insurer or when selling your home. With us, that risk doesn't exist." },
+  { q: "Do you handle council approval for roof replacements?", a: "Yes — and most roofing contractors in Perth legally can't. Only registered builders can obtain permits, manage engineering sign-offs, and certify compliance. As a registered builder (BRN XXXXXXX), we handle all of it for you: permits, approvals, engineering, and inspections. Done properly, fully compliant." },
   { q: "How much does a roof replacement cost in Perth?", a: "Most residential roof replacements in Perth range from $15,000 to $40,000 depending on roof size, pitch, material choice, and whether asbestos removal is involved. We don't give ballpark quotes over the phone — every property is different, and guessing helps no one. After a free on-site inspection, we'll give you a detailed, fixed-price quote with no hidden costs. What we quote is exactly what you pay." },
   { q: "How long does a full roof replacement take?", a: "Most residential roof replacements in Perth are completed within 1–3 days. Larger or more complex roofs may take a little longer. We'll give you a precise timeframe during your free inspection — and we stick to it." },
   { q: "What types of roofing do you replace?", a: "We replace terracotta and concrete tiles with Colorbond, replace worn or damaged Colorbond roofing, and safely remove and replace asbestos roofs with either Colorbond steel or quality tiles. Not sure what you have? We'll identify it during your free inspection." },
-  { q: "Are there any hidden costs in your quotes?", a: "Absolutely not. We've heard the stories of quotes that doubled by the time the job was done — and we built our business on being the opposite of that. Every quote we provide is based on a thorough on-site inspection and covers all costs, all trades, all materials. There are no line items added later, no surprise variations, and no pressure to upgrade. What we quote is what you pay, in writing, before work begins." },
-  { q: "Do you remove asbestos roofing safely?", a: "Yes. Asbestos removal is not something to take chances with, and we don't. We are fully licensed to carry out asbestos removal in Western Australia, and all work is conducted in strict compliance with WorkSafe WA regulations. Asbestos materials are safely contained, removed, and disposed of through authorised channels. You'll receive full documentation confirming the removal was completed to standard." },
+  { q: "Are there any hidden costs in your quotes?", a: "None. Every quote is based on a thorough on-site inspection and covers all labour, trades, and materials. No line items added later, no surprise variations, no pressure to upgrade. What we quote is what you pay — in writing, before any work begins." },
+  { q: "Do you remove asbestos roofing safely?", a: "Yes. We're fully licensed for asbestos removal in WA, and every job is carried out in strict compliance with WorkSafe regulations. Materials are safely contained, removed, and disposed of through authorised channels — and you receive full documentation confirming it was done to standard." },
   { q: "What warranty do you offer?", a: "We provide a workmanship warranty on all roof replacements. Colorbond steel products also carry BlueScope's own manufacturer warranty. Before work begins, we'll walk you through all warranty details in full — so you know exactly what you're covered for, and for how long." },
   { q: "Which Perth suburbs do you service?", a: "We service all Perth metro suburbs — western suburbs, northern suburbs, southern suburbs, and the eastern corridor. Give us a call or fill in the form and we'll confirm availability in your area." },
 ];
@@ -949,7 +957,7 @@ function ContactForm() {
                 <button type="submit" disabled={loading} className="btn-teal btn-teal-hover w-full mt-6 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none">
                   {loading ? "Sending…" : "Book My Free Inspection"}
                 </button>
-                <p className="mt-4 text-center text-xs text-foreground/40">No obligation. We'll call you — not spam you.</p>
+                <p className="mt-4 text-center text-xs text-foreground/40">We'll call you within 1 business day — no spam, ever. We typically book inspections 3–5 days out.</p>
                 {error && (
                   <p className="mt-3 text-sm text-red-600 text-center leading-relaxed">{error}</p>
                 )}
