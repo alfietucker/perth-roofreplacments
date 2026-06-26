@@ -146,6 +146,13 @@ function Hero() {
                 <Phone size={14} className="mr-2" aria-hidden="true" /> (08) 6188 1355
               </a>
             </div>
+            <p className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem] tracking-[0.18em] uppercase text-white/35 font-medium" aria-label="Trust credentials">
+              <span>Registered Builder WA</span>
+              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
+              <span>500+ Roofs Replaced</span>
+              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
+              <span>5.0★ Google Rating</span>
+            </p>
           </div>
         </div>
       </div>
@@ -153,33 +160,6 @@ function Hero() {
   );
 }
 
-
-// ─── Trust Strip ─────────────────────────────────────────────────────────────
-
-const TRUST_MARKS = [
-  "Registered Builder · BC105894",
-  "500+ Roofs Replaced",
-  "Master Builders WA",
-  "5.0★ Google Rating",
-  "ABN 57 682 105 015",
-];
-
-function TrustStrip() {
-  return (
-    <div className="border-b border-border bg-background" aria-label="Credentials">
-      <div className="container-prose">
-        <ul className="flex flex-wrap items-center gap-x-8 gap-y-0 list-none p-0 m-0 py-3.5" role="list">
-          {TRUST_MARKS.map((t, i) => (
-            <li key={t} className="flex items-center gap-8">
-              <span className="text-[0.7rem] tracking-[0.16em] uppercase text-foreground/40 font-medium whitespace-nowrap">{t}</span>
-              {i < TRUST_MARKS.length - 1 && <span className="h-3 w-px bg-border hidden sm:block" aria-hidden="true" />}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
 
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
@@ -887,7 +867,6 @@ function HomePage() {
       <Header />
       <main id="main-content" className="pt-[80px]">
         <Hero />
-        <TrustStrip />
         <div data-reveal><Intro /></div>
         <div data-reveal><Services /></div>
         <div data-reveal><Trust /></div>
