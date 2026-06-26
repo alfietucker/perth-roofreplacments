@@ -12,10 +12,6 @@ import {
   Mail,
   MapPin,
   Star,
-  Shield,
-  FileCheck,
-  Clock,
-  Home,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-roof.jpg";
@@ -597,61 +593,62 @@ function Reviews() {
 const PROCESS_STEPS = [
   {
     n: "01",
-    icon: <Home size={22} className="text-teal" aria-hidden="true" />,
     title: "Free On-Site Inspection",
     body: "We come to you. A qualified builder assesses your roof in full, identifies any issues, and answers every question you have — no cost, no obligation.",
   },
   {
     n: "02",
-    icon: <FileCheck size={22} className="text-teal" aria-hidden="true" />,
     title: "Fixed-Price Quote",
     body: "You receive a detailed written quote covering all labour, materials, and compliance. What we quote is exactly what you pay — in writing, before a single tile is touched.",
   },
   {
     n: "03",
-    icon: <Shield size={22} className="text-teal" aria-hidden="true" />,
     title: "We Handle Everything",
-    body: "Permits. Council submissions. Engineering. Trades. We coordinate the entire job from start to finish. You don't chase anyone. You don't make a single call to council.",
+    body: "Permits. Council submissions. Engineering. Trades. We coordinate the entire job from start to finish. You don't chase anyone, and you never call council.",
   },
   {
     n: "04",
-    icon: <Clock size={22} className="text-teal" aria-hidden="true" />,
     title: "Your New Roof — Done",
-    body: "Most replacements are complete within 1–3 days. Once we're finished, you'll have a fully compliant, guaranteed roof — and we'll still pick up the phone if you ever need us.",
+    body: "Most replacements are complete within 1–3 days. Once we're finished you'll have a fully compliant, guaranteed roof — and we'll still pick up the phone if you ever need us.",
   },
 ];
 
 function Process() {
   return (
     <section id="how" aria-labelledby="process-heading" className="section-pad bg-soft">
-      <div className="container-prose">
-        <div className="text-center mb-16">
-          <p className="eyebrow text-foreground/55">How It Works</p>
-          <h2 id="process-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-            Simple. Transparent. <span className="teal-italic text-[1.1em]">Done Properly.</span>
+      <div className="container-prose grid lg:grid-cols-[0.85fr_1.3fr] gap-16 lg:gap-24">
+        {/* left — heading */}
+        <div className="lg:sticky lg:top-28 self-start">
+          <p className="eyebrow text-foreground/55 block mb-7">How It Works</p>
+          <h2 id="process-heading" className="font-display uppercase font-semibold" style={{ fontSize: "clamp(2.2rem, 4vw, 3.2rem)", lineHeight: "1.02" }}>
+            Simple.
+            <br />
+            Transparent.
+            <br />
+            <span className="teal-italic text-[1.05em]">Done Properly.</span>
           </h2>
-          <p className="mt-6 mx-auto text-foreground/60 leading-[1.85]" style={{ maxWidth: "560px" }}>
-            From your first call to your final roof — here's exactly what happens when you work with us.
+          <div className="mt-8 h-px w-14 bg-teal" aria-hidden="true" />
+          <p className="mt-7 text-foreground/65 leading-[1.85] max-w-sm">
+            From your first call to your final roof — here's exactly what happens when you work with us. No guesswork, no chasing, no surprises.
           </p>
+          <a href="/quote" className="btn-teal btn-teal-hover mt-9">Start With a Free Inspection</a>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {/* right — editorial numbered steps */}
+        <ol className="list-none p-0 m-0 lg:border-l lg:border-border lg:pl-16">
           {PROCESS_STEPS.map((s, idx) => (
-            <div key={s.n} className="relative">
-              {idx < PROCESS_STEPS.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-[calc(100%_-_1rem)] w-8 h-px bg-teal/30 z-10" aria-hidden="true" />
-              )}
-              <div className="w-14 h-14 bg-background border border-border flex items-center justify-center mb-5">
-                {s.icon}
+            <li
+              key={s.n}
+              className={`grid grid-cols-[auto_1fr] gap-6 sm:gap-8 py-8 ${idx === 0 ? "pt-0" : ""} ${idx < PROCESS_STEPS.length - 1 ? "border-b border-border/70" : ""}`}
+            >
+              <span className="font-display text-[2.6rem] sm:text-[3.2rem] font-semibold text-teal/20 leading-none tabular-nums">{s.n}</span>
+              <div className="pt-1">
+                <h3 className="font-display font-semibold uppercase tracking-wide text-base md:text-lg">{s.title}</h3>
+                <p className="mt-2.5 text-foreground/65 leading-[1.85] text-[0.95rem]">{s.body}</p>
               </div>
-              <p className="font-display text-[2.4rem] font-semibold text-teal/15 leading-none mb-3">{s.n}</p>
-              <h3 className="font-display font-semibold uppercase tracking-wide text-sm mb-3">{s.title}</h3>
-              <p className="text-foreground/60 text-[0.85rem] leading-[1.85]">{s.body}</p>
-            </div>
+            </li>
           ))}
-        </div>
-        <div className="mt-14 text-center">
-          <a href="/quote" className="btn-teal btn-teal-hover">Start With a Free Inspection</a>
-        </div>
+        </ol>
       </div>
     </section>
   );
@@ -720,45 +717,52 @@ function Locals() {
 // ─── Risk Reversal ────────────────────────────────────────────────────────────
 
 const RISK_ITEMS = [
-  { icon: <FileCheck size={18} className="text-teal" />, title: "Written Fixed-Price Quote", body: "Before any work begins, you receive a detailed written quote. That number doesn't change — no variations, no extras, no surprises." },
-  { icon: <Shield size={18} className="text-teal" />, title: "Workmanship Guarantee", body: "We stand behind every roof we replace. If something isn't right, we come back and fix it. That guarantee is in writing." },
-  { icon: <Check size={18} className="text-teal" />, title: "Fully Licensed & Insured", body: "Registered Builder (BRN XXXXXXX), fully insured, WorkSafe compliant. You're protected at every stage of the job." },
-  { icon: <Home size={18} className="text-teal" />, title: "Free Inspection — No Obligation", body: "We come to you, assess your roof, and answer every question you have. Walk away if it's not right for you — no pressure, no hard sell." },
+  { title: "Written Fixed-Price Quote", body: "Before any work begins, you receive a detailed written quote. That number doesn't change — no variations, no extras, no surprises." },
+  { title: "Workmanship Guarantee", body: "We stand behind every roof we replace. If something isn't right, we come back and fix it. That guarantee is in writing." },
+  { title: "Fully Licensed & Insured", body: "Registered Builder (BRN XXXXXXX), fully insured, WorkSafe compliant. You're protected at every stage of the job." },
+  { title: "Free Inspection — No Obligation", body: "We come to you, assess your roof, and answer every question. Walk away if it's not right for you — no pressure, no hard sell." },
 ];
 
 function RiskReversal() {
   return (
     <section aria-labelledby="risk-heading" className="section-pad bg-navy text-white">
-      <div className="container-prose">
-        <div className="text-center mb-14">
-          <p className="eyebrow text-teal">Zero Risk to You</p>
-          <h2 id="risk-heading" className="mt-5 font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-            Every Guarantee.
+      <div className="container-prose grid lg:grid-cols-[0.9fr_1.3fr] gap-16 lg:gap-24">
+        {/* left — heading */}
+        <div>
+          <p className="eyebrow text-teal block mb-7">Zero Risk to You</p>
+          <h2 id="risk-heading" className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(2.2rem, 4vw, 3.2rem)", lineHeight: "1.02" }}>
+            Every
             <br />
-            <span className="teal-italic text-[1.1em]">In Writing. Before We Start.</span>
+            Guarantee —
+            <br />
+            <span className="teal-italic text-[1.05em]">In Writing</span>
           </h2>
-          <p className="mt-6 mx-auto text-white/60 leading-[1.85]" style={{ maxWidth: "560px" }}>
-            We know that handing a roofing job to someone new takes trust. Here's everything we do to make that decision easy.
+          <div className="mt-8 h-px w-14 bg-teal" aria-hidden="true" />
+          <p className="mt-7 text-white/70 leading-[1.85] max-w-sm">
+            Handing a roofing job to someone new takes trust. So we put everything in writing, before we start — and we make saying no feel unnecessary.
           </p>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {RISK_ITEMS.map((item) => (
-            <div key={item.title} className="bg-white/5 border border-white/10 p-7 flex gap-5">
-              <div className="shrink-0 w-10 h-10 bg-teal/15 flex items-center justify-center mt-0.5">
-                {item.icon}
-              </div>
-              <div>
-                <h3 className="font-display font-semibold uppercase tracking-wide text-sm text-white">{item.title}</h3>
-                <p className="mt-2 text-white/60 text-[0.84rem] leading-[1.85]">{item.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-12 text-center">
-          <a href="/quote" className="btn-teal btn-teal-hover">
-            Book My Free Inspection — No Obligation <ArrowRight size={14} className="ml-2" aria-hidden="true" />
+          <a href="/quote" className="btn-teal btn-teal-hover mt-9">
+            Book My Free Inspection <ArrowRight size={14} className="ml-2" aria-hidden="true" />
           </a>
         </div>
+
+        {/* right — editorial checklist */}
+        <ul className="list-none p-0 m-0 lg:border-l lg:border-white/15 lg:pl-16">
+          {RISK_ITEMS.map((item, idx) => (
+            <li
+              key={item.title}
+              className={`py-7 ${idx === 0 ? "pt-0" : ""} ${idx < RISK_ITEMS.length - 1 ? "border-b border-white/10" : ""}`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-teal/20 text-teal" aria-hidden="true">
+                  <Check size={14} strokeWidth={2.5} />
+                </span>
+                <h3 className="font-display font-semibold uppercase tracking-wide text-base text-white">{item.title}</h3>
+              </div>
+              <p className="mt-3 pl-9 text-white/65 leading-[1.85] text-[0.92rem]">{item.body}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
