@@ -78,41 +78,105 @@ function Header() {
   return (
     <header
       role="banner"
-      className={`fixed top-0 inset-x-0 z-50 bg-background transition-shadow ${
-        scrolled ? "shadow-[0_1px_0_rgba(32,55,70,0.08),0_8px_24px_-14px_rgba(32,55,70,0.15)]" : ""
+      className={`fixed top-0 inset-x-0 z-50 transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_1px_0_rgba(32,55,70,0.06),0_10px_30px_-18px_rgba(32,55,70,0.22)]" : ""
       }`}
     >
-      <div className="container-prose flex items-center justify-between h-[80px]">
-        <Logo />
-        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-10">
-          {NAV_LINKS.map((n) => (
-            <a key={n.href} href={n.href} className="text-[0.82rem] font-medium text-foreground/85 hover:text-teal transition-colors">
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-3">
-          <a href="tel:YOUR_PHONE_NUMBER" className="hidden md:inline-flex items-center gap-2 text-[0.82rem] font-semibold text-foreground/80 hover:text-teal transition-colors mr-2" aria-label="Call us on (08) XXXX XXXX">
-            <Phone size={14} aria-hidden="true" /> (08) XXXX XXXX
-          </a>
-          <a href="/quote" className="hidden sm:inline-flex btn-teal btn-teal-hover">Book Free Inspection</a>
-          <button className="lg:hidden p-2 -mr-2 text-foreground" onClick={() => setOpen(!open)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-menu">
-            {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-          </button>
+      {/* slim utility strip — collapses on scroll */}
+      <div
+        className={`hidden md:block bg-navy text-white/70 overflow-hidden transition-all duration-300 ${
+          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+        }`}
+      >
+        <div className="container-prose flex items-center justify-between h-9 text-[0.72rem] tracking-wide">
+          <div className="flex items-center gap-2">
+            <MapPin size={12} className="text-teal" aria-hidden="true" />
+            <span>Servicing all Perth metro suburbs</span>
+          </div>
+          <div className="flex items-center gap-5">
+            <span className="flex items-center gap-1.5">
+              <span className="flex gap-px" aria-hidden="true">
+                {[...Array(5)].map((_, i) => <Star key={i} size={10} className="fill-yellow-400 text-yellow-400" />)}
+              </span>
+              <span className="text-white/55">5.0 · 47 Google reviews</span>
+            </span>
+            <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+            <span className="text-white/55">Registered Builder WA · BRN XXXXXXX</span>
+          </div>
         </div>
       </div>
-      {open && (
-        <nav id="mobile-menu" aria-label="Mobile navigation" className="lg:hidden border-t border-border bg-background">
-          <div className="container-prose py-4 flex flex-col gap-1">
-            {NAV_LINKS.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="py-3 text-sm font-medium border-b border-border last:border-0">
+
+      {/* main bar */}
+      <div
+        className={`bg-background/85 backdrop-blur-md border-b transition-colors duration-300 ${
+          scrolled ? "border-border" : "border-transparent"
+        }`}
+      >
+        <div className={`container-prose flex items-center justify-between transition-all duration-300 ${scrolled ? "h-[68px]" : "h-[80px]"}`}>
+          <Logo />
+          <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-9">
+            {NAV_LINKS.slice(0, -1).map((n) => (
+              <a
+                key={n.href}
+                href={n.href}
+                className="group relative text-[0.8rem] font-medium tracking-wide text-foreground/80 hover:text-foreground transition-colors py-1"
+              >
                 {n.label}
+                <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-teal transition-all duration-300 group-hover:w-full" aria-hidden="true" />
               </a>
             ))}
-            <a href="/quote" onClick={() => setOpen(false)} className="btn-teal btn-teal-hover mt-3 sm:hidden">Book Free Inspection</a>
+          </nav>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:YOUR_PHONE_NUMBER"
+              className="hidden md:inline-flex items-center gap-2.5 group"
+              aria-label="Call us on (08) XXXX XXXX"
+            >
+              <span className="flex items-center justify-center w-9 h-9 rounded-full border border-border text-teal group-hover:bg-teal group-hover:text-white group-hover:border-teal transition-all duration-200">
+                <Phone size={14} aria-hidden="true" />
+              </span>
+              <span className="leading-tight">
+                <span className="block text-[0.6rem] uppercase tracking-[0.18em] text-foreground/40 font-medium">Call us</span>
+                <span className="block text-[0.85rem] font-semibold text-foreground group-hover:text-teal transition-colors">(08) XXXX XXXX</span>
+              </span>
+            </a>
+            <span className="hidden lg:block h-8 w-px bg-border" aria-hidden="true" />
+            <a href="/quote" className="hidden sm:inline-flex btn-teal btn-teal-hover">Book Free Inspection</a>
+            <button className="lg:hidden p-2 -mr-2 text-foreground" onClick={() => setOpen(!open)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-menu">
+              {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+            </button>
           </div>
-        </nav>
-      )}
+        </div>
+      </div>
+
+      {/* mobile menu */}
+      <nav
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+        className={`lg:hidden bg-background border-b border-border overflow-hidden transition-all duration-300 ${
+          open ? "max-h-[26rem] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="container-prose py-3 flex flex-col">
+          {NAV_LINKS.slice(0, -1).map((n) => (
+            <a
+              key={n.href}
+              href={n.href}
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-between py-3.5 text-sm font-medium border-b border-border/70 text-foreground/85 hover:text-teal transition-colors"
+            >
+              {n.label}
+              <ChevronRight size={15} className="text-foreground/25" aria-hidden="true" />
+            </a>
+          ))}
+          <div className="flex flex-col gap-3 pt-4 pb-2">
+            <a href="/quote" onClick={() => setOpen(false)} className="btn-teal btn-teal-hover w-full">Book Free Inspection</a>
+            <a href="tel:YOUR_PHONE_NUMBER" className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-foreground/75 border border-border rounded hover:text-teal hover:border-teal transition-colors">
+              <Phone size={14} aria-hidden="true" /> (08) XXXX XXXX
+            </a>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }
