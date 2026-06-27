@@ -550,7 +550,7 @@ function Reviews() {
       </div>
 
       {/* dot pagination + controls */}
-      <div className="container-prose mt-8 flex items-center justify-between">
+      <div className="container-prose mt-8 flex flex-col sm:flex-row gap-6 items-center sm:justify-between">
         <a href="/quote" className="btn-teal btn-teal-hover">Book My Free Roof Inspection</a>
         <div className="flex items-center gap-4">
           <div className="flex gap-2" role="tablist" aria-label="Review pages">

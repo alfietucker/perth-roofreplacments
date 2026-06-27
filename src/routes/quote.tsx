@@ -65,11 +65,11 @@ function QuotePage() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         const json = await res.json().catch(() => ({}));
-        console.error("Formspree error:", res.status, json);
+        console.error("Web3Forms error:", res.status, json);
         setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
       }
     } catch (err) {
-      console.error("Formspree fetch error:", err);
+      console.error("Web3Forms fetch error:", err);
       setError("We couldn't send your request right now. Please call us directly on (08) XXXX XXXX.");
     } finally {
       setLoading(false);
