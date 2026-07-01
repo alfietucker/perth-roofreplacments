@@ -5,7 +5,7 @@ import { ArrowRight, Check, Phone } from "lucide-react";
 export const Route = createFileRoute("/quote")({
   head: () => ({
     meta: [
-      { title: "Get a Free Roof Inspection | Perth Roof Replacements" },
+      { title: "Get a Free Roof Inspection | Ironbark Roofing" },
       {
         name: "description",
         content:
@@ -54,7 +54,7 @@ function QuotePage() {
     try {
       const payload = Object.fromEntries(data);
       payload.access_key = "4da8256a-17ab-43d1-b4f7-178a0bfa1a4d";
-      payload.subject = "New Roof Inspection Request — Perth Roof Replacements";
+      payload.subject = "New Roof Inspection Request — Ironbark Roofing";
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: JSON.stringify(payload),
@@ -89,7 +89,7 @@ function QuotePage() {
                 <path d="M8 18v11h20V18" stroke="currentColor" strokeWidth="2.5" className="text-foreground" />
               </svg>
               <span className="font-display text-[1.05rem] font-semibold tracking-wide uppercase text-foreground">
-                Perth<span className="text-teal">Roof</span>
+                Iron<span className="text-teal">bark</span> <span className="text-foreground/50 text-[0.85em]">Roofing</span>
               </span>
             </div>
           </Link>

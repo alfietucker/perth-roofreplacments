@@ -12,13 +12,13 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const SITE_URL = "https://www.perthroof.com.au";
+const SITE_URL = "https://www.ironbarkroofing.com.au";
 
 const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "RoofingContractor"],
-  name: "Perth Roof Replacements",
-  alternateName: "PerthRoof",
+  name: "Ironbark Roofing",
+  alternateName: "Ironbark Roofing Co.",
   description:
     "Registered building roof replacement specialists serving Perth and Western Australia. We replace tiles with Colorbond, replace existing Colorbond, and safely remove asbestos roofing.",
   url: SITE_URL,
@@ -68,8 +68,8 @@ const LOCAL_BUSINESS_SCHEMA = {
   currenciesAccepted: "AUD",
   paymentAccepted: "Cash, Credit Card, Bank Transfer",
   sameAs: [
-    "https://www.facebook.com/perthroofreplacements",
-    "https://www.instagram.com/perthroofreplacements",
+    "https://www.facebook.com/ironbarkroofing",
+    "https://www.instagram.com/ironbarkroofing",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -92,7 +92,7 @@ const FAQ_SCHEMA = {
       name: "Do you handle council approval for roof replacements in Perth?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. As a registered builder in Western Australia (BRN XXXXXXX), Perth Roof Replacements handles the entire compliance process including council approvals, engineering checks, and permits. Your new roof meets every regulation.",
+        text: "Yes. As a registered builder in Western Australia (BRN XXXXXXX), Ironbark Roofing handles the entire compliance process including council approvals, engineering checks, and permits. Your new roof meets every regulation.",
       },
     },
     {
@@ -108,7 +108,7 @@ const FAQ_SCHEMA = {
       name: "Are there hidden costs in your roof replacement quotes?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. Perth Roof Replacements provides fully-inclusive quotes based on thorough inspections. What we quote is what you pay — no hidden costs, no surprise fees.",
+        text: "No. Ironbark Roofing provides fully-inclusive quotes based on thorough inspections. What we quote is what you pay — no hidden costs, no surprise fees.",
       },
     },
     {
@@ -187,22 +187,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Perth Roof Replacements | Registered Roofing Builders WA" },
+      { title: "Ironbark Roofing | Registered Roofing Builders WA" },
       {
         name: "description",
         content:
           "Expert roof replacements across Perth. Registered builders (BRN XXXXXXX) delivering Colorbond, tile and asbestos roof replacements with full council approval. Get a free quote today.",
       },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
-      { name: "author", content: "Perth Roof Replacements" },
+      { name: "author", content: "Ironbark Roofing" },
       { name: "geo.region", content: "AU-WA" },
       { name: "geo.placename", content: "Perth, Western Australia" },
       { name: "geo.position", content: "-31.9505;115.8605" },
       { name: "ICBM", content: "-31.9505, 115.8605" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_AU" },
-      { property: "og:site_name", content: "Perth Roof Replacements" },
-      { property: "og:title", content: "Perth Roof Replacements | Registered Roofing Builders WA" },
+      { property: "og:site_name", content: "Ironbark Roofing" },
+      { property: "og:title", content: "Ironbark Roofing | Registered Roofing Builders WA" },
       {
         property: "og:description",
         content:
@@ -216,9 +216,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Perth Roof Replacements — Registered Roofing Builders WA" },
+      { property: "og:image:alt", content: "Ironbark Roofing — Registered Roofing Builders WA" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Perth Roof Replacements | Registered Roofing Builders WA" },
+      { name: "twitter:title", content: "Ironbark Roofing | Registered Roofing Builders WA" },
       {
         name: "twitter:description",
         content:

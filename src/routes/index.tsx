@@ -23,7 +23,7 @@ import premiumImg from "@/assets/style-premium.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Perth Roof Replacements | Registered Roofing Builders WA" },
+      { title: "Ironbark Roofing | Registered Roofing Builders WA" },
       {
         name: "description",
         content:
@@ -47,17 +47,17 @@ const NAV_LINKS = [
 function Logo({ light = false }: { light?: boolean }) {
   const textClass = light ? "text-white" : "text-foreground";
   return (
-    <a href="#top" className="flex items-center gap-3" aria-label="Perth Roof Replacements — Home">
+    <a href="#top" className="flex items-center gap-3" aria-label="Ironbark Roofing — Home">
       <svg width="42" height="42" viewBox="0 0 36 36" fill="none" aria-hidden="true" focusable="false">
         <path d="M4 20L18 7l14 13" stroke="currentColor" strokeWidth="2.5" className="text-teal" />
         <path d="M8 18v11h20V18" stroke="currentColor" strokeWidth="2.5" className={textClass} />
       </svg>
       <div className={`leading-none ${textClass}`}>
         <div className="font-display text-[1.2rem] font-semibold tracking-wide uppercase">
-          Perth<span className="text-teal">Roof</span>
+          Iron<span className="text-teal">bark</span>
         </div>
         <div className="text-[0.62rem] font-semibold tracking-[0.26em] opacity-70 mt-1 uppercase">
-          Replacements
+          Roofing Co.
         </div>
       </div>
     </a>
@@ -185,7 +185,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" aria-label="Perth Roof Replacements — Registered Builders" className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[760px] overflow-hidden bg-navy">
+    <section id="top" aria-label="Ironbark Roofing — Registered Builders" className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[760px] overflow-hidden bg-navy">
       <div className="absolute inset-0" aria-hidden="true">
         <img src={heroImg} alt="Premium Colorbond roof replacement installed on a Perth home by registered builders" className="w-full h-full object-cover hero-zoom" width={1920} height={1280} fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,28,38,0.86)_0%,rgba(12,28,38,0.70)_45%,rgba(12,28,38,0.35)_100%)]" />
@@ -383,7 +383,7 @@ function Trust() {
           </div>
         </div>
         <div className="lg:border-l lg:border-border lg:pl-16">
-          <ul className="space-y-10 list-none p-0 m-0" aria-label="Why choose Perth Roof Replacements">
+          <ul className="space-y-10 list-none p-0 m-0" aria-label="Why choose Ironbark Roofing">
             {TRUST_BLOCKS.map((b) => (
               <li key={b.title}>
                 <div className="flex items-center gap-3">
@@ -490,7 +490,7 @@ function Gallery() {
 // ─── Reviews ──────────────────────────────────────────────────────────────────
 
 const REVIEWS = [
-  { name: "Sarah M.", suburb: "Cottesloe", rating: 5, text: "Perth Roof Replacements did an outstanding job replacing our old asbestos roof with Colorbond. The team was professional, punctual, and handled all the council approvals without us having to lift a finger. Highly recommend.", date: "2 months ago" },
+  { name: "Sarah M.", suburb: "Cottesloe", rating: 5, text: "Ironbark Roofing did an outstanding job replacing our old asbestos roof with Colorbond. The team was professional, punctual, and handled all the council approvals without us having to lift a finger. Highly recommend.", date: "2 months ago" },
   { name: "James T.", suburb: "Applecross", rating: 5, text: "From the first quote to the final inspection, the process was seamless. The price they quoted was exactly what we paid — no nasty surprises. The new Colorbond roof looks incredible and was done in just two days.", date: "3 months ago" },
   { name: "Linda K.", suburb: "Floreat", rating: 5, text: "We replaced our old terracotta tiles with Colorbond and couldn't be happier. The crew was tidy, respectful of our property, and the finish is perfect. Genuine registered builders who know what they're doing.", date: "4 months ago" },
   { name: "Mark B.", suburb: "Fremantle", rating: 5, text: "Had them replace an asbestos roof — the peace of mind from having a registered builder handle the compliance side was worth every cent. Professional from start to finish. Would use again without hesitation.", date: "1 month ago" },
@@ -753,7 +753,7 @@ function Locals() {
     <section id="repairs" aria-labelledby="locals-heading" className="bg-background">
       <div className="grid lg:grid-cols-2 items-stretch">
         <div className="relative min-h-[460px] lg:min-h-[600px]">
-          <img src={teamImg} alt="Perth Roof Replacements team member — locally owned and operated roofing business in Western Australia" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={1200} height={1400} />
+          <img src={teamImg} alt="Ironbark Roofing team member — locally owned and operated roofing business in Western Australia" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={1200} height={1400} />
         </div>
         <div className="bg-navy text-white p-10 md:p-16 lg:p-20 flex items-center">
           <div className="max-w-md">
@@ -909,7 +909,7 @@ function ContactForm() {
       const formData = new FormData(e.currentTarget);
       const payload = Object.fromEntries(formData);
       payload.access_key = "4da8256a-17ab-43d1-b4f7-178a0bfa1a4d";
-      payload.subject = "New Quote Request — Perth Roof Replacements";
+      payload.subject = "New Quote Request — Ironbark Roofing";
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: JSON.stringify(payload),
@@ -1087,7 +1087,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-6 text-xs text-foreground/50">
-          <small>&copy; {new Date().getFullYear()} Perth Roof Replacements. All rights reserved.</small>
+          <small>&copy; {new Date().getFullYear()} Ironbark Roofing. All rights reserved.</small>
         </div>
       </div>
     </footer>

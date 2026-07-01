@@ -4,7 +4,7 @@ export function renderErrorPage(): string {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Error — Perth Roof Replacements</title>
+  <title>Error — Ironbark Roofing</title>
   <style>
     body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f9fafb; color: #1f2937; }
     .box { max-width: 400px; text-align: center; padding: 2rem; }
