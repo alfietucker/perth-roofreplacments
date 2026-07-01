@@ -20,7 +20,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   name: "Ironbark Roofing",
   alternateName: "Ironbark Roofing Co.",
   description:
-    "Registered building roof replacement specialists serving Perth and Western Australia. We replace tiles with Colorbond, replace existing Colorbond, and safely remove asbestos roofing.",
+    "Registered building roof replacement specialists serving Adelaide and South Australia. We replace tiles with Colorbond, replace existing Colorbond, and safely remove asbestos roofing.",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/og-image.jpg`,
@@ -28,18 +28,18 @@ const LOCAL_BUSINESS_SCHEMA = {
   email: "hello@youremail.com.au",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Perth",
-    addressRegion: "WA",
+    addressLocality: "Adelaide",
+    addressRegion: "SA",
     addressCountry: "AU",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: -31.9505,
-    longitude: 115.8605,
+    latitude: -34.9285,
+    longitude: 138.6007,
   },
   areaServed: [
-    { "@type": "City", name: "Perth" },
-    { "@type": "State", name: "Western Australia" },
+    { "@type": "City", name: "Adelaide" },
+    { "@type": "State", name: "South Australia" },
   ],
   openingHoursSpecification: [
     {
@@ -89,10 +89,10 @@ const FAQ_SCHEMA = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Do you handle council approval for roof replacements in Perth?",
+      name: "Do you handle council approval for roof replacements in Adelaide?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. As a registered builder in Western Australia (BRN XXXXXXX), Ironbark Roofing handles the entire compliance process including council approvals, engineering checks, and permits. Your new roof meets every regulation.",
+        text: "Yes. As a registered builder in South Australia (BRN XXXXXXX), Ironbark Roofing handles the entire compliance process including council approvals, engineering checks, and permits. Your new roof meets every regulation.",
       },
     },
     {
@@ -116,7 +116,7 @@ const FAQ_SCHEMA = {
       name: "What areas do you service?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We service Perth and all surrounding suburbs across Western Australia.",
+        text: "We service Adelaide and all surrounding suburbs across South Australia.",
       },
     },
   ],
@@ -187,26 +187,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ironbark Roofing | Registered Roofing Builders WA" },
+      { title: "Ironbark Roofing | Registered Roofing Builders SA" },
       {
         name: "description",
         content:
-          "Expert roof replacements across Perth. Registered builders (BRN XXXXXXX) delivering Colorbond, tile and asbestos roof replacements with full council approval. Get a free quote today.",
+          "Expert roof replacements across Adelaide. Registered builders (BRN XXXXXXX) delivering Colorbond, tile and asbestos roof replacements with full council approval. Get a free quote today.",
       },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
       { name: "author", content: "Ironbark Roofing" },
-      { name: "geo.region", content: "AU-WA" },
-      { name: "geo.placename", content: "Perth, Western Australia" },
+      { name: "geo.region", content: "AU-SA" },
+      { name: "geo.placename", content: "Adelaide, South Australia" },
       { name: "geo.position", content: "-31.9505;115.8605" },
       { name: "ICBM", content: "-31.9505, 115.8605" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_AU" },
       { property: "og:site_name", content: "Ironbark Roofing" },
-      { property: "og:title", content: "Ironbark Roofing | Registered Roofing Builders WA" },
+      { property: "og:title", content: "Ironbark Roofing | Registered Roofing Builders SA" },
       {
         property: "og:description",
         content:
-          "Expert roof replacements across Perth. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval.",
+          "Expert roof replacements across Adelaide. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval.",
       },
       { property: "og:url", content: SITE_URL },
       {
@@ -216,13 +216,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Ironbark Roofing — Registered Roofing Builders WA" },
+      { property: "og:image:alt", content: "Ironbark Roofing — Registered Roofing Builders SA" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Ironbark Roofing | Registered Roofing Builders WA" },
+      { name: "twitter:title", content: "Ironbark Roofing | Registered Roofing Builders SA" },
       {
         name: "twitter:description",
         content:
-          "Expert roof replacements across Perth. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval.",
+          "Expert roof replacements across Adelaide. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval.",
       },
       {
         name: "twitter:image",

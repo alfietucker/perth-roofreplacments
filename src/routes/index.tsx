@@ -23,11 +23,11 @@ import premiumImg from "@/assets/style-premium.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ironbark Roofing | Registered Roofing Builders WA" },
+      { title: "Ironbark Roofing | Registered Roofing Builders SA" },
       {
         name: "description",
         content:
-          "Premium roof replacements across Perth. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval — fixed price, no surprises.",
+          "Premium roof replacements across Adelaide. Registered builders delivering Colorbond, tile and asbestos roof replacements with full council approval — fixed price, no surprises.",
       },
     ],
   }),
@@ -91,7 +91,7 @@ function Header() {
         <div className="container-prose flex items-center justify-between h-9 text-[0.72rem] tracking-wide">
           <div className="flex items-center gap-2">
             <MapPin size={12} className="text-teal" aria-hidden="true" />
-            <span>Servicing all Perth metro suburbs</span>
+            <span>Servicing all Adelaide metro suburbs</span>
           </div>
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
@@ -101,7 +101,7 @@ function Header() {
               <span className="text-white/55">5.0 · 47 Google reviews</span>
             </span>
             <span className="h-3 w-px bg-white/15" aria-hidden="true" />
-            <span className="text-white/55">Registered Builder WA · BRN XXXXXXX</span>
+            <span className="text-white/55">Registered Builder SA · BRN XXXXXXX</span>
           </div>
         </div>
       </div>
@@ -187,7 +187,7 @@ function Hero() {
   return (
     <section id="top" aria-label="Ironbark Roofing — Registered Builders" className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[760px] overflow-hidden bg-navy">
       <div className="absolute inset-0" aria-hidden="true">
-        <img src={heroImg} alt="Premium Colorbond roof replacement installed on a Perth home by registered builders" className="w-full h-full object-cover hero-zoom" width={1920} height={1280} fetchPriority="high" decoding="async" />
+        <img src={heroImg} alt="Premium Colorbond roof replacement installed on a Adelaide home by registered builders" className="w-full h-full object-cover hero-zoom" width={1920} height={1280} fetchPriority="high" decoding="async" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,28,38,0.86)_0%,rgba(12,28,38,0.70)_45%,rgba(12,28,38,0.35)_100%)]" />
       </div>
       <div className="relative min-h-[700px] md:min-h-[720px] lg:min-h-[760px] flex items-center">
@@ -199,7 +199,7 @@ function Hero() {
               <span className="teal-italic text-[1.04em]">Done Once. Done Right.</span>
             </h1>
             <p className="mt-7 text-base sm:text-lg text-white/80 max-w-[520px] leading-relaxed">
-              Perth's registered roofing builders — we handle every permit, every trade, and every council approval. One fixed price. No surprises. Guaranteed.
+              Adelaide's registered roofing builders — we handle every permit, every trade, and every council approval. One fixed price. No surprises. Guaranteed.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 items-center">
               <a href="/quote" className="btn-teal btn-teal-hover">
@@ -214,7 +214,7 @@ function Hero() {
                 {[...Array(5)].map((_, i) => <Star key={i} size={15} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />)}
               </div>
               <span className="text-[0.82rem]">
-                <span className="font-semibold text-white">5.0</span> from 47 Google reviews · Registered Builder WA
+                <span className="font-semibold text-white">5.0</span> from 47 Google reviews · Registered Builder SA
               </span>
             </div>
           </div>
@@ -231,12 +231,12 @@ function Problem() {
     <section aria-labelledby="problem-heading" className="bg-navy text-white py-16 md:py-20">
       <div className="container-prose max-w-4xl text-center">
         <h2 id="problem-heading" className="font-display uppercase font-semibold text-white" style={{ fontSize: "clamp(1.7rem, 3.4vw, 2.6rem)", lineHeight: "1.08" }}>
-          Most Perth Homeowners Don't Know
+          Most Adelaide Homeowners Don't Know
           <br />
           <span className="teal-italic text-[1.08em]">What They're Really Signing Up For</span>
         </h2>
         <p className="mt-8 text-white/65 leading-[1.9] text-[1.02rem] max-w-2xl mx-auto">
-          You get a quote. Sounds reasonable. Then the variations roll in — unexpected costs, a crew that disappears, council letters because the permits weren't lodged properly. Most roofing contractors in Perth aren't registered builders. They can't legally handle permits or compliance. When things go wrong, it's your home, your liability.
+          You get a quote. Sounds reasonable. Then the variations roll in — unexpected costs, a crew that disappears, council letters because the permits weren't lodged properly. Most roofing contractors in Adelaide aren't registered builders. They can't legally handle permits or compliance. When things go wrong, it's your home, your liability.
         </p>
       </div>
     </section>
@@ -250,7 +250,7 @@ function Intro() {
     <section id="replacements" aria-labelledby="intro-heading" className="section-pad bg-background">
       <div className="container-prose text-center">
         <div className="mx-auto h-px w-12 bg-teal mb-8" aria-hidden="true" />
-        <p className="eyebrow text-foreground/55">Perth's Registered Roof Replacement Specialists</p>
+        <p className="eyebrow text-foreground/55">Adelaide's Registered Roof Replacement Specialists</p>
         <h2 id="intro-heading" className="mt-6 mx-auto font-display uppercase font-semibold" style={{ maxWidth: "720px", fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
           Fixed Price. <span className="teal-italic text-[1.1em]">Council Approved.</span> Done in{" "}
           <span className="teal-italic text-[1.1em]">Days.</span>
@@ -281,7 +281,7 @@ const SERVICE_ITEMS = [
   {
     title: "Replace Tiles With Colorbond",
     outcome: "Lighter load. Decades of protection.",
-    description: "Professional replacement of existing terracotta or concrete roof tiles with premium Colorbond steel roofing in Perth.",
+    description: "Professional replacement of existing terracotta or concrete roof tiles with premium Colorbond steel roofing in Adelaide.",
     icon: "M8 30L32 14l24 16M14 30v20h36V30M14 38h36M14 44h36",
   },
   {
@@ -293,13 +293,13 @@ const SERVICE_ITEMS = [
   {
     title: "Replace Asbestos With Tiles",
     outcome: "Safe removal. Peace of mind restored.",
-    description: "Safe licensed asbestos roof removal and replacement with quality concrete or terracotta tiles across Perth.",
+    description: "Safe licensed asbestos roof removal and replacement with quality concrete or terracotta tiles across Adelaide.",
     icon: "M10 28h44l-6-10H16zM14 28v22h36V28M18 32l4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4",
   },
   {
     title: "Replace Asbestos With Colorbond",
     outcome: "Modern, durable, and fully compliant.",
-    description: "Safe licensed asbestos roof removal and replacement with durable Colorbond steel roofing for Perth homes.",
+    description: "Safe licensed asbestos roof removal and replacement with durable Colorbond steel roofing for Adelaide homes.",
     icon: "M10 28h44l-6-10H16zM14 28v22h36V28M14 34h36M14 40h36M14 46h36",
   },
 ];
@@ -336,7 +336,7 @@ function Services() {
 const TRUST_BLOCKS = [
   {
     title: "Done Once, Done Right",
-    body: "A botched roof job is one of the most expensive mistakes a homeowner can make — and one of the hardest to fix. As registered builders, we coordinate every trade from start to finish, ensuring your replacement meets code, handles Perth's climate, and doesn't need touching again for decades.",
+    body: "A botched roof job is one of the most expensive mistakes a homeowner can make — and one of the hardest to fix. As registered builders, we coordinate every trade from start to finish, ensuring your replacement meets code, handles Adelaide's climate, and doesn't need touching again for decades.",
   },
   {
     title: "What We Quote Is What You Pay",
@@ -373,7 +373,7 @@ function Trust() {
             {[
               "Registered Builder · BRN XXXXXXX",
               "ABN XX XXX XXX XXX",
-              "Member · Master Builders WA",
+              "Member · Master Builders SA",
             ].map((line) => (
               <div key={line} className="flex items-center gap-3 text-sm text-foreground/60">
                 <div className="h-px w-5 bg-teal shrink-0" aria-hidden="true" />
@@ -406,10 +406,10 @@ function Trust() {
 // ─── Photo Gallery ────────────────────────────────────────────────────────────
 
 const GALLERY_IMAGES = [
-  { src: heroImg, alt: "Aerial view of completed Colorbond roof replacement on a Perth home", caption: "Colorbond Replacement — Karrinyup" },
-  { src: classicImg, alt: "Classic terracotta tile roof on a brick Perth home after replacement", caption: "Tile Roof — Cottesloe" },
-  { src: modernImg, alt: "Modern dark standing-seam Colorbond roof on a contemporary Perth home", caption: "Modern Colorbond — Applecross" },
-  { src: premiumImg, alt: "Premium Colorbond roof on a two-storey Perth home at dusk", caption: "Premium Colorbond — Dalkeith" },
+  { src: heroImg, alt: "Aerial view of completed Colorbond roof replacement on a Adelaide home", caption: "Colorbond Replacement — Golden Grove" },
+  { src: classicImg, alt: "Classic terracotta tile roof on a brick Adelaide home after replacement", caption: "Tile Roof — Glenelg" },
+  { src: modernImg, alt: "Modern dark standing-seam Colorbond roof on a contemporary Adelaide home", caption: "Modern Colorbond — Unley" },
+  { src: premiumImg, alt: "Premium Colorbond roof on a two-storey Adelaide home at dusk", caption: "Premium Colorbond — Toorak Gardens" },
 ];
 
 function Gallery() {
@@ -420,11 +420,11 @@ function Gallery() {
         <div className="text-center mb-14">
           <p className="eyebrow text-foreground/55">Our Work</p>
           <h2 id="gallery-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-            Perth Roofs <span className="teal-italic text-[1.1em]">We're Proud Of</span>
+            Adelaide Roofs <span className="teal-italic text-[1.1em]">We're Proud Of</span>
           </h2>
           <p className="mt-5 mx-auto text-foreground/60 leading-[1.85]" style={{ maxWidth: "580px" }}>
             Every job is a reflection of our standards. Here's a sample of recent roof replacements
-            completed across the Perth metro area.
+            completed across the Adelaide metro area.
           </p>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0 m-0" role="list">
@@ -490,12 +490,12 @@ function Gallery() {
 // ─── Reviews ──────────────────────────────────────────────────────────────────
 
 const REVIEWS = [
-  { name: "Sarah M.", suburb: "Cottesloe", rating: 5, text: "Ironbark Roofing did an outstanding job replacing our old asbestos roof with Colorbond. The team was professional, punctual, and handled all the council approvals without us having to lift a finger. Highly recommend.", date: "2 months ago" },
-  { name: "James T.", suburb: "Applecross", rating: 5, text: "From the first quote to the final inspection, the process was seamless. The price they quoted was exactly what we paid — no nasty surprises. The new Colorbond roof looks incredible and was done in just two days.", date: "3 months ago" },
-  { name: "Linda K.", suburb: "Floreat", rating: 5, text: "We replaced our old terracotta tiles with Colorbond and couldn't be happier. The crew was tidy, respectful of our property, and the finish is perfect. Genuine registered builders who know what they're doing.", date: "4 months ago" },
-  { name: "Mark B.", suburb: "Fremantle", rating: 5, text: "Had them replace an asbestos roof — the peace of mind from having a registered builder handle the compliance side was worth every cent. Professional from start to finish. Would use again without hesitation.", date: "1 month ago" },
-  { name: "Rachel P.", suburb: "Subiaco", rating: 5, text: "Excellent communication throughout. They came out, gave us a thorough quote, explained everything clearly, and delivered exactly what they promised. The new roof has completely transformed the look of our home.", date: "5 months ago" },
-  { name: "David H.", suburb: "Nedlands", rating: 5, text: "Five stars doesn't feel like enough. Replaced our entire tile roof — the team worked efficiently, cleaned up after themselves each day, and the end result is flawless. Real tradespeople who take pride in their craft.", date: "6 months ago" },
+  { name: "Sarah M.", suburb: "Glenelg", rating: 5, text: "Ironbark Roofing did an outstanding job replacing our old asbestos roof with Colorbond. The team was professional, punctual, and handled all the council approvals without us having to lift a finger. Highly recommend.", date: "2 months ago" },
+  { name: "James T.", suburb: "Unley", rating: 5, text: "From the first quote to the final inspection, the process was seamless. The price they quoted was exactly what we paid — no nasty surprises. The new Colorbond roof looks incredible and was done in just two days.", date: "3 months ago" },
+  { name: "Linda K.", suburb: "Norwood", rating: 5, text: "We replaced our old terracotta tiles with Colorbond and couldn't be happier. The crew was tidy, respectful of our property, and the finish is perfect. Genuine registered builders who know what they're doing.", date: "4 months ago" },
+  { name: "Mark B.", suburb: "Semaphore", rating: 5, text: "Had them replace an asbestos roof — the peace of mind from having a registered builder handle the compliance side was worth every cent. Professional from start to finish. Would use again without hesitation.", date: "1 month ago" },
+  { name: "Rachel P.", suburb: "Prospect", rating: 5, text: "Excellent communication throughout. They came out, gave us a thorough quote, explained everything clearly, and delivered exactly what they promised. The new roof has completely transformed the look of our home.", date: "5 months ago" },
+  { name: "David H.", suburb: "Burnside", rating: 5, text: "Five stars doesn't feel like enough. Replaced our entire tile roof — the team worked efficiently, cleaned up after themselves each day, and the end result is flawless. Real tradespeople who take pride in their craft.", date: "6 months ago" },
 ];
 
 const GOOGLE_ICON = (
@@ -551,7 +551,7 @@ function Reviews() {
       <div className="container-prose text-center mb-12">
         <p className="eyebrow text-foreground/55">Customer Reviews</p>
         <h2 id="reviews-heading" className="mt-5 font-display uppercase font-semibold" style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", lineHeight: "1.08" }}>
-          500+ Perth Homeowners <span className="teal-italic text-[1.1em]">Have Made the Switch</span>
+          500+ Adelaide Homeowners <span className="teal-italic text-[1.1em]">Have Made the Switch</span>
         </h2>
         <div className="mt-8 inline-flex items-center gap-3 border border-border bg-soft px-5 py-3.5">
           {GOOGLE_ICON}
@@ -605,7 +605,7 @@ function Reviews() {
 
             <div className="mt-6 pt-5 border-t border-border/50" itemProp="author" itemScope itemType="https://schema.org/Person">
               <p className="font-display font-semibold uppercase tracking-[0.12em] text-foreground text-[0.75rem]" itemProp="name">{r.name}</p>
-              <p className="text-foreground/35 text-[0.68rem] mt-0.5">{r.suburb}, WA · <time>{r.date}</time></p>
+              <p className="text-foreground/35 text-[0.68rem] mt-0.5">{r.suburb}, SA · <time>{r.date}</time></p>
             </div>
           </article>
         ))}
@@ -721,7 +721,7 @@ function Process() {
 // ─── Approval / Credential ────────────────────────────────────────────────────
 
 const PARTNER_BRANDS = [
-  { name: "Master Builders Association WA", short: "Master Builders" },
+  { name: "Master Builders Association SA", short: "Master Builders" },
   { name: "Zincalume® Steel", short: "Zincalume®" },
   { name: "Colorbond® Steel", short: "Colorbond®" },
   { name: "Stratco Building Products", short: "Stratco" },
@@ -753,22 +753,22 @@ function Locals() {
     <section id="repairs" aria-labelledby="locals-heading" className="bg-background">
       <div className="grid lg:grid-cols-2 items-stretch">
         <div className="relative min-h-[460px] lg:min-h-[600px]">
-          <img src={teamImg} alt="Ironbark Roofing team member — locally owned and operated roofing business in Western Australia" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={1200} height={1400} />
+          <img src={teamImg} alt="Ironbark Roofing team member — locally owned and operated roofing business in South Australia" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={1200} height={1400} />
         </div>
         <div className="bg-navy text-white p-10 md:p-16 lg:p-20 flex items-center">
           <div className="max-w-md">
             <p className="eyebrow text-teal">Locally Owned</p>
             <h2 id="locals-heading" className="mt-6 font-display uppercase font-semibold" style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", lineHeight: "1.02" }}>
-              We Know Perth.
+              We Know Adelaide.
               <br />
               <span className="teal-italic text-[1.1em]">Every Suburb. Every Roof.</span>
             </h2>
             <div className="mt-7 h-px w-14 bg-teal" aria-hidden="true" />
             <p className="mt-7 text-white/80 leading-[1.85]">
-              Perth roofs deal with conditions you won't find anywhere else in Australia. Coastal salt air from Cottesloe to Scarborough. Summer heat that warps and fades cheap materials. Old limestone homes in the western suburbs with non-standard council requirements. Every suburb in Perth has its quirks — different council rules, different soil profiles, different neighbour clearances.
+              Adelaide roofs deal with conditions you won't find anywhere else in Australia. Coastal salt air from Glenelg to Henley Beach. Fierce summer heat that warps and fades cheap materials. Heritage bluestone and sandstone villas in the eastern suburbs with non-standard council requirements. Reactive clay soils that shift and stress a roof's structure. Every suburb in Adelaide has its quirks — different council rules, different soil profiles, different neighbour clearances.
             </p>
             <p className="mt-5 text-white/80 leading-[1.85]">
-              We're a West Australian–owned business. Not a national chain, not a franchise. We've replaced roofs from Joondalup to Rockingham, from Midland to Fremantle. When we quote your job, we're quoting it based on real knowledge of your home, your suburb, and your council — not a one-size-fits-all template.
+              We're a South Australian–owned business. Not a national chain, not a franchise. We've replaced roofs from Elizabeth to Noarlunga, from Gawler to Semaphore. When we quote your job, we're quoting it based on real knowledge of your home, your suburb, and your council — not a one-size-fits-all template.
             </p>
             <a href="/quote" className="btn-teal btn-teal-hover mt-9">Get My Fixed-Price Quote</a>
           </div>
@@ -783,7 +783,7 @@ function Locals() {
 const RISK_ITEMS = [
   { title: "Written Fixed-Price Quote", body: "Before any work begins, you receive a detailed written quote. That number doesn't change — no variations, no extras, no surprises." },
   { title: "Workmanship Guarantee", body: "We stand behind every roof we replace. If something isn't right, we come back and fix it. That guarantee is in writing." },
-  { title: "Fully Licensed & Insured", body: "Registered Builder (BRN XXXXXXX), fully insured, WorkSafe compliant. You're protected at every stage of the job." },
+  { title: "Fully Licensed & Insured", body: "Registered Builder (BRN XXXXXXX), fully insured, SafeWork SA compliant. You're protected at every stage of the job." },
   { title: "Free Inspection — No Obligation", body: "We come to you, assess your roof, and answer every question. Walk away if it's not right for you — no pressure, no hard sell." },
 ];
 
@@ -835,14 +835,14 @@ function RiskReversal() {
 // ─── FAQs ─────────────────────────────────────────────────────────────────────
 
 const FAQS = [
-  { q: "Do you handle council approval for roof replacements?", a: "Yes — and most roofing contractors in Perth legally can't. Only registered builders can obtain permits, manage engineering sign-offs, and certify compliance. As a registered builder (BRN XXXXXXX), we handle all of it for you: permits, approvals, engineering, and inspections. Done properly, fully compliant." },
-  { q: "How much does a roof replacement cost in Perth?", a: "Most residential roof replacements in Perth range from $15,000 to $40,000 depending on roof size, pitch, material choice, and whether asbestos removal is involved. We don't give ballpark quotes over the phone — every property is different, and guessing helps no one. After a free on-site inspection, we'll give you a detailed, fixed-price quote with no hidden costs. What we quote is exactly what you pay." },
-  { q: "How long does a full roof replacement take?", a: "Most residential roof replacements in Perth are completed within 1–3 days. Larger or more complex roofs may take a little longer. We'll give you a precise timeframe during your free inspection — and we stick to it." },
+  { q: "Do you handle council approval for roof replacements?", a: "Yes — and most roofing contractors in Adelaide legally can't. Only registered builders can obtain permits, manage engineering sign-offs, and certify compliance. As a registered builder (BRN XXXXXXX), we handle all of it for you: permits, approvals, engineering, and inspections. Done properly, fully compliant." },
+  { q: "How much does a roof replacement cost in Adelaide?", a: "Most residential roof replacements in Adelaide range from $15,000 to $40,000 depending on roof size, pitch, material choice, and whether asbestos removal is involved. We don't give ballpark quotes over the phone — every property is different, and guessing helps no one. After a free on-site inspection, we'll give you a detailed, fixed-price quote with no hidden costs. What we quote is exactly what you pay." },
+  { q: "How long does a full roof replacement take?", a: "Most residential roof replacements in Adelaide are completed within 1–3 days. Larger or more complex roofs may take a little longer. We'll give you a precise timeframe during your free inspection — and we stick to it." },
   { q: "What types of roofing do you replace?", a: "We replace terracotta and concrete tiles with Colorbond, replace worn or damaged Colorbond roofing, and safely remove and replace asbestos roofs with either Colorbond steel or quality tiles. Not sure what you have? We'll identify it during your free inspection." },
   { q: "Are there any hidden costs in your quotes?", a: "None. Every quote is based on a thorough on-site inspection and covers all labour, trades, and materials. No line items added later, no surprise variations, no pressure to upgrade. What we quote is what you pay — in writing, before any work begins." },
-  { q: "Do you remove asbestos roofing safely?", a: "Yes. We're fully licensed for asbestos removal in WA, and every job is carried out in strict compliance with WorkSafe regulations. Materials are safely contained, removed, and disposed of through authorised channels — and you receive full documentation confirming it was done to standard." },
+  { q: "Do you remove asbestos roofing safely?", a: "Yes. We're fully licensed for asbestos removal in SA, and every job is carried out in strict compliance with SafeWork SA regulations. Materials are safely contained, removed, and disposed of through authorised channels — and you receive full documentation confirming it was done to standard." },
   { q: "What warranty do you offer?", a: "We provide a workmanship warranty on all roof replacements. Colorbond steel products also carry BlueScope's own manufacturer warranty. Before work begins, we'll walk you through all warranty details in full — so you know exactly what you're covered for, and for how long." },
-  { q: "Which Perth suburbs do you service?", a: "We service all Perth metro suburbs — western suburbs, northern suburbs, southern suburbs, and the eastern corridor. Give us a call or fill in the form and we'll confirm availability in your area." },
+  { q: "Which Adelaide suburbs do you service?", a: "We service all Adelaide metro suburbs — the eastern and western suburbs, the northern suburbs, the south, and out to the Adelaide Hills. Give us a call or fill in the form and we'll confirm availability in your area." },
 ];
 
 function FAQs() {
@@ -971,7 +971,7 @@ function ContactForm() {
                 </span>
                 <div>
                   <p className="text-xs text-foreground/45 uppercase tracking-widest font-medium">Location</p>
-                  <p className="font-semibold text-foreground">Perth, Western Australia</p>
+                  <p className="font-semibold text-foreground">Adelaide, South Australia</p>
                 </div>
               </div>
             </address>
@@ -1004,7 +1004,7 @@ function ContactForm() {
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="form-suburb" className="text-xs font-semibold uppercase tracking-widest text-foreground/55">Suburb</label>
-                    <input id="form-suburb" name="suburb" type="text" autoComplete="address-level2" placeholder="Cottesloe" className="border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-teal transition-colors" />
+                    <input id="form-suburb" name="suburb" type="text" autoComplete="address-level2" placeholder="Glenelg" className="border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-teal transition-colors" />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="form-service" className="text-xs font-semibold uppercase tracking-widest text-foreground/55">Service</label>
@@ -1056,7 +1056,7 @@ function Footer() {
           <div>
             <Logo />
             <p className="mt-6 text-sm text-foreground/65 max-w-xs leading-[1.85]">
-              We don't just replace roofs. We make sure they're done right — legally, structurally, and for the long term. That's our commitment to every Perth homeowner we work with.
+              We don't just replace roofs. We make sure they're done right — legally, structurally, and for the long term. That's our commitment to every Adelaide homeowner we work with.
             </p>
             <p className="mt-3 text-xs text-foreground/40">ABN XX XXX XXX XXX · BRN XXXXXXX</p>
           </div>
@@ -1081,7 +1081,7 @@ function Footer() {
               </p>
               <p className="flex items-center gap-3">
                 <MapPin size={14} className="text-teal shrink-0" aria-hidden="true" />
-                <span>Perth, Western Australia</span>
+                <span>Adelaide, South Australia</span>
               </p>
             </address>
           </div>

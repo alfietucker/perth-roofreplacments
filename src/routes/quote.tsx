@@ -9,7 +9,7 @@ export const Route = createFileRoute("/quote")({
       {
         name: "description",
         content:
-          "Book your free on-site roof inspection with Perth's registered roofing builders. Fixed-price quotes, no obligation, reply within one business day.",
+          "Book your free on-site roof inspection with Adelaide's registered roofing builders. Fixed-price quotes, no obligation, reply within one business day.",
       },
       { name: "robots", content: "noindex" },
     ],
@@ -187,7 +187,7 @@ function QuotePage() {
                     </div>
                     <div>
                       <label htmlFor="q-suburb" className={labelCls}>Suburb *</label>
-                      <input id="q-suburb" name="suburb" type="text" required autoComplete="address-level2" placeholder="Cottesloe" className={inputCls} />
+                      <input id="q-suburb" name="suburb" type="text" required autoComplete="address-level2" placeholder="Glenelg" className={inputCls} />
                     </div>
                   </div>
 
